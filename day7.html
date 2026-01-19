@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 7: Advanced Prototyping Patterns | AI Rapid Prototyping</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="day6.html">← Day 6</a>
+            <a href="index.html">Curriculum</a>
+            <a href="day8.html">Day 8 →</a>
+        </div>
+        
+        <header>
+            <h1>Day 7: Advanced Prototyping Patterns</h1>
+            <span class="time-badge">⏱️ 6 hours (Morning: 3h | Afternoon: 3h)</span>
+        </header>
+        
+        <div class="section">
+            <h2>🎯 Today's Goals</h2>
+            <ul class="checklist">
+                <li>✅ Master complex interaction patterns</li>
+                <li>✅ Build multi-step forms</li>
+                <li>✅ Create data tables with interactions</li>
+                <li>✅ Build dashboard prototypes</li>
+                <li>✅ Create research-ready prototypes</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>🌅 Morning Session: Complex Interactions (3 hours)</h2>
+            
+            <h3>Pattern 1: Multi-Step Forms</h3>
+            <p><strong>Use Case:</strong> Onboarding flows, checkout processes, complex data entry</p>
+            
+            <div class="resource-card">
+                <h4>📚 Form Patterns Resources</h4>
+                <a href="https://www.nngroup.com/articles/multi-step-forms/" target="_blank" class="resource-link">NN/g: Multi-Step Forms</a>
+                <a href="https://chakra-ui.com/docs/components/form-control" target="_blank" class="resource-link">Chakra UI Forms</a>
+            </div>
+            
+            <h4>Implementation Pattern</h4>
+            <div class="code-block">
+<code>const [currentStep, setCurrentStep] = useState(0);
+const [formData, setFormData] = useState({});
+
+const steps = [
+  { title: 'Personal Info', fields: ['name', 'email'] },
+  { title: 'Preferences', fields: ['theme', 'notifications'] },
+  { title: 'Review', fields: [] }
+];
+
+const handleNext = () => {
+  // Validate current step
+  if (validateStep(currentStep)) {
+    setCurrentStep(currentStep + 1);
+  }
+};
+
+const handleBack = () => {
+  setCurrentStep(currentStep - 1);
+};
+
+// Progress indicator
+const progress = ((currentStep + 1) / steps.length) * 100;</code>
+            </div>
+            
+            <h4>Key Features:</h4>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>✅ Step-by-step validation</li>
+                <li>✅ Progress indicators</li>
+                <li>✅ Back/forward navigation</li>
+                <li>✅ Data persistence between steps</li>
+                <li>✅ Error handling per step</li>
+            </ul>
+            
+            <h3>Pattern 2: Data Tables</h3>
+            <p><strong>Use Case:</strong> Admin dashboards, data management, user lists</p>
+            
+            <div class="resource-card">
+                <h4>📚 Data Table Resources</h4>
+                <a href="https://chakra-ui.com/docs/components/table" target="_blank" class="resource-link">Chakra UI Table</a>
+                <a href="https://tanstack.com/table" target="_blank" class="resource-link">TanStack Table (Advanced)</a>
+            </div>
+            
+            <h4>Implementation Pattern</h4>
+            <div class="code-block">
+<code>const [data, setData] = useState([]);
+const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
+const [filter, setFilter] = useState('');
+const [currentPage, setCurrentPage] = useState(1);
+
+// Sorting
+const handleSort = (key) => {
+  setSortConfig({
+    key,
+    direction: sortConfig.key === key && sortConfig.direction === 'asc' 
+      ? 'desc' 
+      : 'asc'
+  });
+};
+
+// Filtering
+const filteredData = data.filter(item => 
+  item.name.toLowerCase().includes(filter.toLowerCase())
+);
+
+// Pagination
+const itemsPerPage = 10;
+const paginatedData = filteredData.slice(
+  (currentPage - 1) * itemsPerPage,
+  currentPage * itemsPerPage
+);</code>
+            </div>
+            
+            <h4>Key Features:</h4>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>✅ Column sorting</li>
+                <li>✅ Row filtering</li>
+                <li>✅ Pagination</li>
+                <li>✅ Row selection</li>
+                <li>✅ Actions menu</li>
+            </ul>
+            
+            <h3>Pattern 3: Dashboards</h3>
+            <p><strong>Use Case:</strong> Analytics dashboards, admin panels, data visualization</p>
+            
+            <div class="resource-card">
+                <h4>📚 Dashboard Resources</h4>
+                <a href="https://recharts.org" target="_blank" class="resource-link">Recharts (React Charts)</a>
+                <a href="https://chakra-ui.com/docs/components/grid" target="_blank" class="resource-link">Chakra UI Grid Layout</a>
+            </div>
+            
+            <h4>Exercise: Build Dashboard Prototype</h4>
+            <div class="checklist">
+                <li>1. Design dashboard layout in Figma</li>
+                <li>2. Include: Header, Sidebar, Data Table, Charts, Filters</li>
+                <li>3. Import to Lovable</li>
+                <li>4. Generate components</li>
+                <li>5. Add interactions:
+                    <ul style="margin-left: 20px; margin-top: 5px;">
+                        <li>Navigation clicks</li>
+                        <li>Filter changes</li>
+                        <li>Chart interactions</li>
+                        <li>Table sorting/filtering</li>
+                    </ul>
+                </li>
+                <li>6. Test all interactions</li>
+                <li>7. Make responsive</li>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🌆 Afternoon Session: Customer Research Prototypes (3 hours)</h2>
+            
+            <h3>Research Prototype Requirements</h3>
+            <p><strong>What makes a prototype research-ready?</strong></p>
+            
+            <div class="checklist">
+                <li>✅ Complete user flows (not just individual screens)</li>
+                <li>✅ Key interactions working</li>
+                <li>✅ Realistic data/content</li>
+                <li>✅ Error states included</li>
+                <li>✅ Loading states included</li>
+                <li>✅ Mobile responsive</li>
+                <li>✅ Accessible (for diverse users)</li>
+            </div>
+            
+            <div class="resource-card">
+                <h4>📚 User Research Resources</h4>
+                <a href="https://www.nngroup.com/articles/prototype-testing/" target="_blank" class="resource-link">NN/g: Prototype Testing</a>
+                <a href="https://www.usertesting.com/blog/prototype-testing" target="_blank" class="resource-link">UserTesting: Prototype Testing</a>
+            </div>
+            
+            <h3>Best Practices for Research Prototypes</h3>
+            <p><strong>1. Focus on Key Flows</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>Don't build everything - focus on what you need to test</li>
+                <li>Prioritize critical user journeys</li>
+                <li>Include edge cases that matter</li>
+            </ul>
+            
+            <p><strong>2. Use Realistic Content</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>Real names, not "John Doe"</li>
+                <li>Realistic data quantities</li>
+                <li>Actual copy (not lorem ipsum)</li>
+            </ul>
+            
+            <p><strong>3. Include Edge Cases</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>Error states (validation errors, API failures)</li>
+                <li>Empty states (no data, first use)</li>
+                <li>Loading states (slow connections)</li>
+                <li>Success states (completed actions)</li>
+            </ul>
+            
+            <h3>Exercise: Build Customer Research Prototype</h3>
+            <p><strong>Scenario:</strong> User onboarding flow for a SaaS product</p>
+            
+            <h4>Requirements:</h4>
+            <div class="checklist">
+                <li>1. Onboarding flow (3-5 steps)</li>
+                <li>2. Core feature interaction (main use case)</li>
+                <li>3. Error handling (validation, network errors)</li>
+                <li>4. Success states (completion, confirmation)</li>
+                <li>5. Mobile responsive</li>
+            </div>
+            
+            <h4>Step-by-Step:</h4>
+            <div class="checklist">
+                <li>1. Design flow in Figma (1 hour)</li>
+                <li>2. Import to Lovable (15 min)</li>
+                <li>3. Generate components (30 min)</li>
+                <li>4. Add interactions (1 hour)</li>
+                <li>5. Add error/success states (30 min)</li>
+                <li>6. Test complete flow (15 min)</li>
+                <li>7. Prepare test script (15 min)</li>
+            </div>
+            
+            <h3>Test Script Template</h3>
+            <div class="code-block">
+<code># User Research Test Script
+
+## Introduction
+[Welcome, explain prototype, get consent]
+
+## Scenario
+[Describe the scenario to user]
+
+## Tasks
+1. [Task 1: Specific action]
+2. [Task 2: Specific action]
+3. [Task 3: Specific action]
+
+## Questions
+- How did that feel?
+- What was confusing?
+- What worked well?
+
+## Wrap-up
+[Thank user, ask final questions]</code>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🧠 Expert Advice & Invaluable Takeaways</h2>
+            
+            <h3>Strategic Perspective: Complex Interactions as Differentiators</h3>
+            <p><strong>From "Designing With AI" (Smashing Magazine):</strong> Complex interactions (multi-step forms, data tables, dashboards) are where AI-enabled prototyping really shines. These patterns are repetitive but require careful implementation. AI can generate the structure, and designers focus on UX refinement and edge cases.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Source: Advanced AI Design Techniques</h4>
+                <a href="https://www.smashingmagazine.com/2025/08/designing-with-ai-practical-techniques-product-design/" target="_blank" class="resource-link">Smashing Magazine: Designing With AI</a>
+            </div>
+            
+            <p><strong>Business Impact:</strong> For B2B SaaS, complex interactions (dashboards, data tables, multi-step forms) are common. When you can prototype these in hours instead of days, you can test more variations and find better solutions faster.</p>
+            
+            <h3>Tactical Perspective: Research Prototypes from AI's Point of View</h3>
+            <p><strong>Why Research Prototypes Need Real Code:</strong> When prototypes use real code, they can handle real data, real interactions, and real edge cases. This makes customer research more realistic and leads to better product decisions.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Source: User Research Best Practices</h4>
+                <a href="https://www.nngroup.com/articles/prototype-testing/" target="_blank" class="resource-link">NN/g: Prototype Testing</a>
+            </div>
+            
+            <h3>Engineering Perspective: Prototypes as Technical Specs</h3>
+            <p><strong>From Dive Club's "Future of Design Tooling":</strong> When prototypes generate real code, they become technical specifications. Engineers can read the code, understand the implementation, and use it as a reference. This reduces handoff friction and accelerates development.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Source: Dive Club on Design Tooling</h4>
+                <a href="https://www.dive.club/ideas/the-future-of-design-tooling" target="_blank" class="resource-link">Dive Club: Future of Design Tooling</a>
+            </div>
+            
+            <h3>Product Design Perspective: Edge Cases as Design Opportunities</h3>
+            <p><strong>From NN/g Research:</strong> Edge cases (error states, empty states, loading states) are design opportunities. When you include these in prototypes, you test how users handle failures and edge cases. This leads to more robust products.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Source: UX Best Practices</h4>
+                <a href="https://www.nngroup.com/articles/error-message-guidelines/" target="_blank" class="resource-link">NN/g: Error Message Guidelines</a>
+            </div>
+            
+            <h3>B2B SaaS Perspective: Customer Research ROI</h3>
+            <p><strong>Business Impact:</strong> For B2B SaaS, customer research directly impacts revenue. When you can test ideas 3-4x faster, you can validate more features and find winning solutions faster. This directly impacts competitive positioning.</p>
+            
+            <h3>Key Artifacts for Team Presentation</h3>
+            <div class="artifact-box">
+                <p><strong>Present to your team at end of Day 7:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>📊 <strong>Complex Prototype Demo:</strong> Showcase dashboard or multi-step form</li>
+                    <li>🔬 <strong>Research Prototype:</strong> Complete onboarding flow with edge cases</li>
+                    <li>📝 <strong>Test Script:</strong> User research script for customer testing</li>
+                    <li>💡 <strong>Key Insights:</strong> What worked, what didn't, why</li>
+                    <li>🎯 <strong>Pattern Library:</strong> Documented interaction patterns for reuse</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>✅ Today's Artifacts</h2>
+            <div class="artifact-box">
+                <p><strong>Required Artifacts:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>📊 Complex prototype (dashboard or multi-step form)</li>
+                    <li>🔬 Research-ready prototype (onboarding flow)</li>
+                    <li>📝 Test script for user research</li>
+                    <li>📋 Interaction pattern documentation</li>
+                    <li>⏱️ Time metrics (how long each pattern took)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🎯 Checkpoint</h2>
+            <p>Before moving to Day 8, verify:</p>
+            <ul class="checklist">
+                <li>✅ Complex interactions mastered</li>
+                <li>✅ Research prototype complete</li>
+                <li>✅ Test script prepared</li>
+                <li>✅ Patterns documented</li>
+                <li>✅ Ready for code quality work tomorrow</li>
+            </ul>
+        </div>
+        
+        <div style="text-align: center; margin: 40px 0;">
+            <a href="day6.html" class="btn btn-secondary">← Day 6</a>
+            <a href="day8.html" class="btn">Continue to Day 8 →</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 9: Workflow Optimization | AI Rapid Prototyping</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="day8.html">← Day 8</a>
+            <a href="index.html">Curriculum</a>
+            <a href="day10.html">Day 10 →</a>
+        </div>
+        
+        <header>
+            <h1>Day 9: Workflow Optimization</h1>
+            <span class="time-badge">⏱️ 6 hours (Morning: 3h | Afternoon: 3h)</span>
+        </header>
+        
+        <div class="section">
+            <h2>🎯 Today's Goals</h2>
+            <ul class="checklist">
+                <li>✅ Analyze current workflow for bottlenecks</li>
+                <li>✅ Implement workflow optimizations</li>
+                <li>✅ Master advanced tool features</li>
+                <li>✅ Create reusable templates</li>
+                <li>✅ Document optimized workflows</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>🌅 Morning Session: Workflow Analysis & Optimization (3 hours)</h2>
+            
+            <h3>Deep Dive: Workflow Optimization Principles</h3>
+            
+            <div class="resource-card">
+                <h4>📚 Workflow Optimization Resources</h4>
+                <a href="https://www.nngroup.com/articles/design-workflows/" target="_blank" class="resource-link">NN/g: Design Workflows</a>
+                <a href="https://www.interaction-design.org/literature/topics/design-workflow" target="_blank" class="resource-link">IxDF: Design Workflow</a>
+            </div>
+            
+            <h4>Identify Bottlenecks</h4>
+            <p><strong>Step 1: Time Each Step</strong></p>
+            <div class="checklist">
+                <li>1. Design in Figma: [X] minutes</li>
+                <li>2. Import to Lovable: [X] minutes</li>
+                <li>3. Generate components: [X] minutes</li>
+                <li>4. Add interactions: [X] minutes</li>
+                <li>5. Test prototype: [X] minutes</li>
+                <li>6. Refine code: [X] minutes</li>
+            </div>
+            
+            <p><strong>Step 2: Find Slowest Steps</strong></p>
+            <p>Identify which steps take the most time. These are your optimization targets.</p>
+            
+            <p><strong>Step 3: Identify Repetitive Tasks</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>What do you do repeatedly?</li>
+                <li>What can be automated?</li>
+                <li>What can be templated?</li>
+            </ul>
+            
+            <h3>Optimization Strategies</h3>
+            
+            <h4>Strategy 1: Automate Repetitive Tasks</h4>
+            <div class="checklist">
+                <li>✅ Use Agents for component generation</li>
+                <li>✅ Create Skills for common patterns</li>
+                <li>✅ Set up auto-sync workflows</li>
+                <li>✅ Use templates for documentation</li>
+            </div>
+            
+            <h4>Strategy 2: Parallelize Work</h4>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>Design while code generates</li>
+                <li>Test while building</li>
+                <li>Document as you go</li>
+            </ul>
+            
+            <h4>Strategy 3: Use Templates</h4>
+            <div class="checklist">
+                <li>✅ Component templates</li>
+                <li>✅ Prototype templates</li>
+                <li>✅ Documentation templates</li>
+                <li>✅ Prompt templates</li>
+            </div>
+            
+            <h4>Strategy 4: Optimize Tools</h4>
+            <div class="checklist">
+                <li>✅ Customize Cursor shortcuts</li>
+                <li>✅ Set up Warp workflows</li>
+                <li>✅ Configure Claude Agents</li>
+                <li>✅ Create Lovable project templates</li>
+            </div>
+            
+            <h3>Exercise: Analyze Your Workflow</h3>
+            <p><strong>Task:</strong> Build a simple prototype and time each step</p>
+            
+            <div class="checklist">
+                <li>1. Pick a simple feature (e.g., login form)</li>
+                <li>2. Time each step of your current workflow</li>
+                <li>3. Identify 3 bottlenecks</li>
+                <li>4. Implement optimizations for each</li>
+                <li>5. Rebuild the same feature</li>
+                <li>6. Compare times (before vs. after)</li>
+            </div>
+            
+            <h3>Common Optimizations</h3>
+            <p><strong>1. Pre-built Component Library</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>Build components once, reuse everywhere</li>
+                <li>Saves: 1-2 hours per prototype</li>
+            </ul>
+            
+            <p><strong>2. Agent for Common Tasks</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>Create Agent for "Generate form component"</li>
+                <li>Saves: 30 minutes per form</li>
+            </ul>
+            
+            <p><strong>3. Template Library</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>Save common layouts as templates</li>
+                <li>Saves: 20-30 minutes per layout</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>🌆 Afternoon Session: Advanced Tool Mastery (3 hours)</h2>
+            
+            <h3>Warp Workflows</h3>
+            <p><strong>Create reusable terminal workflows</strong></p>
+            
+            <div class="resource-card">
+                <h4>📚 Warp Resources</h4>
+                <a href="https://docs.warp.dev" target="_blank" class="resource-link">Warp Documentation</a>
+                <a href="https://docs.warp.dev/workflows" target="_blank" class="resource-link">Warp Workflows</a>
+            </div>
+            
+            <h4>Useful Warp Workflows</h4>
+            <div class="code-block">
+<code># Git Operations
+workflow: "git-push"
+commands:
+  - git add .
+  - git commit -m "$1"
+  - git push
+
+# Design System Management
+workflow: "update-tokens"
+commands:
+  - npm run tokens:export
+  - npm run tokens:transform
+  - npm run build</code>
+            </div>
+            
+            <h3>Cursor Optimization</h3>
+            <p><strong>Customize for design system work</strong></p>
+            
+            <div class="resource-card">
+                <h4>📚 Cursor Resources</h4>
+                <a href="https://docs.cursor.sh" target="_blank" class="resource-link">Cursor Documentation</a>
+                <a href="https://docs.cursor.sh/settings" target="_blank" class="resource-link">Cursor Settings</a>
+            </div>
+            
+            <h4>Cursor Optimizations</h4>
+            <div class="checklist">
+                <li>1. Configure AI model (Claude vs. GPT-4)</li>
+                <li>2. Set up custom shortcuts</li>
+                <li>3. Configure code completion</li>
+                <li>4. Set up design system context</li>
+            </div>
+            
+            <h3>Claude Agents Advanced</h3>
+            <p><strong>Multi-step Agents and Agent Chaining</strong></p>
+            
+            <div class="resource-card">
+                <h4>📚 Advanced Agents</h4>
+                <a href="https://docs.anthropic.com/claude/docs/agents-advanced" target="_blank" class="resource-link">Advanced Agents Guide</a>
+            </div>
+            
+            <h4>Agent Chaining Example</h4>
+            <div class="code-block">
+<code>Agent Chain: Complete Feature Implementation
+
+Agent 1: Design Analyzer
+  → Output: Design specification
+
+Agent 2: Component Generator
+  → Input: Design spec
+  → Output: Component code
+
+Agent 3: Code Refiner
+  → Input: Component code
+  → Output: Production-ready code
+
+Agent 4: Documentation Generator
+  → Input: Component code
+  → Output: Complete documentation</code>
+            </div>
+            
+            <h3>Create Template Library</h3>
+            <p><strong>Build reusable templates for common tasks</strong></p>
+            
+            <h4>Template Types</h4>
+            <div class="checklist">
+                <li>1. Component templates (Button, Input, Card variants)</li>
+                <li>2. Prototype templates (Landing page, Dashboard, Form flow)</li>
+                <li>3. Documentation templates (Component docs, Handoff docs)</li>
+                <li>4. Prompt templates (Component generation, Theme updates)</li>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🧠 Expert Advice & Invaluable Takeaways</h2>
+            
+            <h3>Strategic Perspective: Workflow Optimization as Competitive Advantage</h3>
+            <p><strong>From "Designing With AI" (Smashing Magazine):</strong> Workflow optimization isn't just about speed—it's about enabling your team to do more with the same resources. When you optimize workflows, you're not just saving time—you're creating competitive advantage through faster iteration and better outcomes.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Source: Workflow Optimization</h4>
+                <a href="https://www.smashingmagazine.com/2025/08/designing-with-ai-practical-techniques-product-design/" target="_blank" class="resource-link">Smashing Magazine: Designing With AI</a>
+            </div>
+            
+            <p><strong>Business Impact:</strong> If workflow optimization saves 2 hours per designer per week, and you have 5 designers, that's 10 hours weekly—40 hours monthly. At $100/hour, that's $4,000 monthly value—$48,000 yearly.</p>
+            
+            <h3>Tactical Perspective: Templates as Force Multipliers</h3>
+            <p><strong>From Dive Club's "Future of Design Tooling":</strong> Templates aren't just shortcuts—they're force multipliers. When you create templates for common patterns (landing pages, dashboards, forms), you enable your team to work 3-5x faster while maintaining quality.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Source: Dive Club on Design Tooling</h4>
+                <a href="https://www.dive.club/ideas/the-future-of-design-tooling" target="_blank" class="resource-link">Dive Club: Future of Design Tooling</a>
+            </div>
+            
+            <h3>Engineering Perspective: Automation as Infrastructure</h3>
+            <p><strong>From Dive Club's "AI Systems Designer":</strong> Automation isn't just about efficiency—it's infrastructure. When you automate repetitive tasks (component generation, theme updates, documentation), you're building infrastructure that enables your team to focus on high-value work.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Source: Dive Club on AI Systems Design</h4>
+                <a href="https://www.dive.club/ideas/introducing-the-ai-systems-designer" target="_blank" class="resource-link">Dive Club: AI Systems Designer</a>
+            </div>
+            
+            <h3>Product Design Perspective: Optimization as Design Practice</h3>
+            <p><strong>From NN/g Research:</strong> Workflow optimization is a design practice. Just as you optimize user experiences, you should optimize your design workflows. This means identifying bottlenecks, testing solutions, and iterating on processes.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Source: Design Workflow Best Practices</h4>
+                <a href="https://www.nngroup.com/articles/design-workflows/" target="_blank" class="resource-link">NN/g: Design Workflows</a>
+            </div>
+            
+            <h3>B2B SaaS Perspective: Scalability Through Optimization</h3>
+            <p><strong>Business Impact:</strong> For B2B SaaS, workflow optimization enables scalability. When your team can work 3-5x faster, you can handle more projects, test more ideas, and ship more features. This directly impacts growth and competitive positioning.</p>
+            
+            <h3>Key Artifacts for Team Presentation</h3>
+            <div class="artifact-box">
+                <p><strong>Present to your team at end of Day 9:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>⚡ <strong>Optimized Workflow Diagram:</strong> Visual showing before/after improvements</li>
+                    <li>📊 <strong>Time Savings Metrics:</strong> Quantified efficiency gains</li>
+                    <li>📚 <strong>Template Library:</strong> Reusable templates for common patterns</li>
+                    <li>🛠️ <strong>Tool Configurations:</strong> Optimized settings for each tool</li>
+                    <li>💡 <strong>Optimization Recommendations:</strong> Actionable improvements for team</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>✅ Today's Artifacts</h2>
+            <div class="artifact-box">
+                <p><strong>Required Artifacts:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>⚡ Optimized workflow documentation</li>
+                    <li>📊 Time savings metrics (before/after)</li>
+                    <li>📚 Template library (components, prototypes, docs)</li>
+                    <li>🛠️ Advanced tool configurations</li>
+                    <li>📝 Optimization recommendations</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🎯 Checkpoint</h2>
+            <p>Before moving to Day 10, verify:</p>
+            <ul class="checklist">
+                <li>✅ Workflows optimized</li>
+                <li>✅ Templates created</li>
+                <li>✅ Tools configured for efficiency</li>
+                <li>✅ Time savings documented</li>
+                <li>✅ Ready for capstone project tomorrow</li>
+            </ul>
+        </div>
+        
+        <div style="text-align: center; margin: 40px 0;">
+            <a href="day8.html" class="btn btn-secondary">← Day 8</a>
+            <a href="day10.html" class="btn">Continue to Day 10 →</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

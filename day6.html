@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 6: Rapid Prototyping Fundamentals | AI Rapid Prototyping</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="day5.html">← Day 5</a>
+            <a href="index.html">Curriculum</a>
+            <a href="day7.html">Day 7 →</a>
+        </div>
+        
+        <header>
+            <h1>Day 6: Rapid Prototyping Fundamentals</h1>
+            <span class="time-badge">⏱️ 6 hours (Morning: 3h | Afternoon: 3h)</span>
+        </header>
+        
+        <div class="section">
+            <h2>🎯 Today's Goals</h2>
+            <ul class="checklist">
+                <li>✅ Master Lovable for rapid prototyping</li>
+                <li>✅ Understand Lovable architecture</li>
+                <li>✅ Build first interactive prototype</li>
+                <li>✅ Add interactions and state</li>
+                <li>✅ Test prototype functionality</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>🌅 Morning Session: Lovable Deep Dive (3 hours)</h2>
+            
+            <h3>Deep Dive: Lovable Architecture</h3>
+            
+            <div class="resource-card">
+                <h4>📚 Lovable Resources</h4>
+                <a href="https://lovable.dev" target="_blank" class="resource-link">Lovable Official Site</a>
+                <a href="https://docs.lovable.dev" target="_blank" class="resource-link">Lovable Documentation</a>
+                <a href="https://blog.lovable.dev" target="_blank" class="resource-link">Lovable Blog</a>
+            </div>
+            
+            <h4>How Lovable Works</h4>
+            <p><strong>Architecture Flow:</strong></p>
+            <div class="code-block">
+<code>Input (Figma Design or Description)
+    ↓
+Lovable AI Processing
+    ↓
+React Component Generation
+    ↓
+Interactive Prototype
+    ↓
+Shareable Link</code>
+            </div>
+            
+            <p><strong>Key Features:</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>✅ Design → Code conversion in minutes</li>
+                <li>✅ Real React components (not mockups)</li>
+                <li>✅ Built-in AI assistance</li>
+                <li>✅ Interactive prototypes</li>
+                <li>✅ Engineering handoff ready</li>
+            </ul>
+            
+            <h4>Lovable vs. Traditional Prototyping</h4>
+            <table>
+                <tr>
+                    <th>Feature</th>
+                    <th>Figma Prototypes</th>
+                    <th>Lovable</th>
+                </tr>
+                <tr>
+                    <td>Time to Prototype</td>
+                    <td>1-2 days</td>
+                    <td>2-4 hours</td>
+                </tr>
+                <tr>
+                    <td>Interactivity</td>
+                    <td>Limited (clicks, hovers)</td>
+                    <td>Full (forms, state, APIs)</td>
+                </tr>
+                <tr>
+                    <td>Code Output</td>
+                    <td>None (visual only)</td>
+                    <td>Real React components</td>
+                </tr>
+                <tr>
+                    <td>Handoff</td>
+                    <td>Requires separate dev</td>
+                    <td>Production-ready code</td>
+                </tr>
+                <tr>
+                    <td>User Testing</td>
+                    <td>Limited scenarios</td>
+                    <td>Full user flows</td>
+                </tr>
+            </table>
+            
+            <p><strong>Decision Framework:</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>✅ Use Lovable for: Customer research, rapid iteration, engineering handoff</li>
+                <li>✅ Use Figma for: Early ideation, visual exploration, stakeholder reviews</li>
+            </ul>
+            
+            <h3>Lovable Workflow</h3>
+            <div class="checklist">
+                <li>1. Design in Figma (or describe in text)</li>
+                <li>2. Import to Lovable (or describe to AI)</li>
+                <li>3. AI generates React components</li>
+                <li>4. Add interactions and state</li>
+                <li>5. Test prototype</li>
+                <li>6. Share for feedback</li>
+                <li>7. Iterate quickly</li>
+            </div>
+            
+            <div class="resource-card">
+                <h4>📚 Lovable Tutorials</h4>
+                <a href="https://docs.lovable.dev/getting-started" target="_blank" class="resource-link">Getting Started Guide</a>
+                <a href="https://docs.lovable.dev/features" target="_blank" class="resource-link">Lovable Features</a>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🌆 Afternoon Session: Interactive Prototype Building (3 hours)</h2>
+            
+            <h3>Exercise: Landing Page Prototype</h3>
+            <p><strong>Goal:</strong> Build a complete interactive landing page in Lovable</p>
+            
+            <h4>Step 1: Design in Figma (30 min)</h4>
+            <div class="checklist">
+                <li>1. Create landing page design</li>
+                <li>2. Include: Header, Hero, Features, CTA, Footer</li>
+                <li>3. Use your design system components</li>
+                <li>4. Document interactions needed</li>
+            </div>
+            
+            <h4>Step 2: Import to Lovable (15 min)</h4>
+            <div class="checklist">
+                <li>1. Open Lovable project</li>
+                <li>2. Click "Import from Figma" (or describe design)</li>
+                <li>3. Select frames to import</li>
+                <li>4. Review imported components</li>
+            </div>
+            
+            <h4>Step 3: Generate Components (30 min)</h4>
+            <p>Use Claude Code or Lovable's AI to generate components:</p>
+            <div class="code-block">
+<code>Convert this Figma design to interactive Chakra UI components:
+
+Design:
+- Landing page with header, hero section, features, CTA, footer
+- Header: Logo, navigation menu, CTA button
+- Hero: Headline, subheadline, CTA buttons, image
+- Features: 3 feature cards with icons
+- CTA: Call-to-action section
+- Footer: Links, social icons, copyright
+
+Interactions:
+- Navigation menu clicks
+- Smooth scroll to sections
+- CTA button clicks
+- Form submission (if applicable)</code>
+            </div>
+            
+            <h4>Step 4: Add Interactions (1 hour)</h4>
+            <p><strong>Interaction Patterns:</strong></p>
+            
+            <p><strong>Click Handlers:</strong></p>
+            <div class="code-block">
+<code>const handleNavClick = (section) => {
+  document.getElementById(section).scrollIntoView({ 
+    behavior: 'smooth' 
+  });
+};
+
+&lt;Button onClick={() => handleNavClick('features')}&gt;
+  Features
+&lt;/Button&gt;</code>
+            </div>
+            
+            <p><strong>Form Handling:</strong></p>
+            <div class="code-block">
+<code>const [email, setEmail] = useState('');
+const [submitted, setSubmitted] = useState(false);
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  // Handle form submission
+  setSubmitted(true);
+};
+
+&lt;Form onSubmit={handleSubmit}&gt;
+  &lt;Input 
+    value={email} 
+    onChange={(e) => setEmail(e.target.value)} 
+  /&gt;
+  &lt;Button type="submit"&gt;Subscribe&lt;/Button&gt;
+&lt;/Form&gt;</code>
+            </div>
+            
+            <p><strong>State Management:</strong></p>
+            <div class="code-block">
+<code>const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+&lt;Button onClick={() => setIsMenuOpen(!isMenuOpen)}&gt;
+  Menu
+&lt;/Button&gt;
+{isMenuOpen && &lt;NavigationMenu /&gt;}</code>
+            </div>
+            
+            <div class="resource-card">
+                <h4>📚 React State Management</h4>
+                <a href="https://react.dev/learn/state-a-components-memory" target="_blank" class="resource-link">React State Documentation</a>
+                <a href="https://react.dev/learn/responding-to-events" target="_blank" class="resource-link">React Events Guide</a>
+            </div>
+            
+            <h4>Step 5: Test Prototype (30 min)</h4>
+            <div class="checklist">
+                <li>1. Test all navigation links</li>
+                <li>2. Test form submission</li>
+                <li>3. Test smooth scrolling</li>
+                <li>4. Test responsive design (mobile/desktop)</li>
+                <li>5. Test all interactive elements</li>
+                <li>6. Fix any bugs or issues</li>
+            </div>
+            
+            <h4>Step 6: Share for Feedback (15 min)</h4>
+            <div class="checklist">
+                <li>1. Get shareable link from Lovable</li>
+                <li>2. Share with team or test users</li>
+                <li>3. Collect feedback</li>
+                <li>4. Document issues to fix</li>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🧠 Expert Advice & Invaluable Takeaways</h2>
+            
+            <h3>Strategic Perspective: Rapid Prototyping as Competitive Advantage</h3>
+            <p><strong>From "Designing With AI" (Smashing Magazine):</strong> Rapid prototyping isn't just about speed—it's about testing more ideas with customers. When you can prototype in 2-4 hours instead of 1-2 days, you can test 3-4x more ideas. This is a competitive advantage in B2B SaaS where customer feedback drives product decisions.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Source: Rapid Prototyping Best Practices</h4>
+                <a href="https://www.smashingmagazine.com/2025/08/designing-with-ai-practical-techniques-product-design/" target="_blank" class="resource-link">Smashing Magazine: Designing With AI</a>
+                <a href="https://www.nngroup.com/articles/prototype-testing/" target="_blank" class="resource-link">NN/g: Prototype Testing</a>
+            </div>
+            
+            <p><strong>Business Impact:</strong> If you test 4 ideas per month instead of 1, and each tested idea has a 25% chance of success, you're 4x more likely to find winning features. For B2B SaaS, this directly impacts revenue and customer satisfaction.</p>
+            
+            <h3>Tactical Perspective: Lovable from AI's Point of View</h3>
+            <p><strong>Why Lovable Generates Real Code:</strong> Lovable doesn't just create mockups—it generates real React components. This means AI can reason about state, interactions, and data flow. When you describe a feature to Lovable, it understands the technical requirements, not just the visual design.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Source: Lovable Documentation</h4>
+                <a href="https://docs.lovable.dev" target="_blank" class="resource-link">Lovable Documentation</a>
+            </div>
+            
+            <h3>Engineering Perspective: Prototypes as Engineering Handoff</h3>
+            <p><strong>From Dive Club's "Future of Design Tooling":</strong> When prototypes generate real code, they become engineering handoff artifacts. Engineers can read the code, understand the implementation, and use it as a starting point. This reduces handoff friction and accelerates development.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Source: Dive Club on Design Tooling</h4>
+                <a href="https://www.dive.club/ideas/the-future-of-design-tooling" target="_blank" class="resource-link">Dive Club: Future of Design Tooling</a>
+            </div>
+            
+            <h3>Product Design Perspective: Interactive Prototypes for Customer Research</h3>
+            <p><strong>From NN/g Research:</strong> Interactive prototypes provide richer customer research than static mockups. Users can complete real tasks, experience real interactions, and provide feedback on actual functionality. This leads to better product decisions.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Source: User Research Best Practices</h4>
+                <a href="https://www.nngroup.com/articles/prototype-testing/" target="_blank" class="resource-link">NN/g: Prototype Testing</a>
+                <a href="https://www.usertesting.com/blog/prototype-testing" target="_blank" class="resource-link">UserTesting: Prototype Testing</a>
+            </div>
+            
+            <h3>B2B SaaS Perspective: Faster Time-to-Market</h3>
+            <p><strong>Business Impact:</strong> For B2B SaaS, faster prototyping means faster time-to-market. If you can validate ideas 3-4x faster, you can ship features 3-4x faster. This directly impacts competitive positioning and customer satisfaction.</p>
+            
+            <h3>Debate Points: Lovable vs. Traditional Prototyping</h3>
+            
+            <h4>Argument FOR Lovable:</h4>
+            <p><strong>Pro:</strong> Lovable generates real code, enables full interactivity, and provides engineering handoff. It's faster and more realistic than traditional prototyping.</p>
+            <p><strong>Source:</strong> <a href="https://docs.lovable.dev" target="_blank">Lovable Documentation</a></p>
+            
+            <h4>Argument FOR Figma Prototypes:</h4>
+            <p><strong>Pro:</strong> Figma prototypes are faster for early ideation, don't require code knowledge, and are easier to iterate visually.</p>
+            
+            <p><strong>Resolution:</strong> Use Figma for early ideation and visual exploration. Use Lovable for customer research and engineering handoff. The key is using the right tool for the right stage.</p>
+            
+            <h3>Key Artifacts for Team Presentation</h3>
+            <div class="artifact-box">
+                <p><strong>Present to your team at end of Day 6:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>🚀 <strong>Interactive Prototype Demo:</strong> Live demonstration of your prototype</li>
+                    <li>⏱️ <strong>Time Metrics:</strong> How long it took vs. traditional method</li>
+                    <li>📊 <strong>Before/After Comparison:</strong> Traditional vs. AI-enabled workflow</li>
+                    <li>💡 <strong>Key Insights:</strong> What worked, what didn't, why</li>
+                    <li>🎯 <strong>Use Case Examples:</strong> When to use Lovable vs. Figma</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>✅ Today's Artifacts</h2>
+            <div class="artifact-box">
+                <p><strong>Required Artifacts:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>🚀 Interactive landing page prototype</li>
+                    <li>🔗 Shareable Lovable link</li>
+                    <li>📝 Workflow documentation (how you built it)</li>
+                    <li>⏱️ Time metrics (how long it took)</li>
+                    <li>📊 Before/after comparison (vs. traditional method)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🎯 Checkpoint</h2>
+            <p>Before moving to Day 7, verify:</p>
+            <ul class="checklist">
+                <li>✅ First interactive prototype complete</li>
+                <li>✅ All interactions working</li>
+                <li>✅ Prototype tested and shared</li>
+                <li>✅ Workflow documented</li>
+                <li>✅ Ready for advanced patterns tomorrow</li>
+            </ul>
+        </div>
+        
+        <div style="text-align: center; margin: 40px 0;">
+            <a href="day5.html" class="btn btn-secondary">← Day 5</a>
+            <a href="day7.html" class="btn">Continue to Day 7 →</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

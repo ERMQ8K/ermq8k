@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 3: Component Generation Mastery | AI Rapid Prototyping</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="day2.html">← Day 2</a>
+            <a href="index.html">Curriculum</a>
+            <a href="day4.html">Day 4 →</a>
+        </div>
+        
+        <header>
+            <h1>Day 3: Component Generation Mastery</h1>
+            <span class="time-badge">⏱️ 6 hours (Morning: 3h | Afternoon: 3h)</span>
+        </header>
+        
+        <div class="section">
+            <h2>🎯 Today's Goals</h2>
+            <ul class="checklist">
+                <li>✅ Master prompt engineering for component generation</li>
+                <li>✅ Understand effective prompt structure</li>
+                <li>✅ Build 10+ components using AI</li>
+                <li>✅ Create prompt library</li>
+                <li>✅ Document all components</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>🌅 Morning Session: Prompt Engineering for Components (3 hours)</h2>
+            
+            <h3>Deep Dive: Prompt Engineering Principles</h3>
+            
+            <div class="resource-card">
+                <h4>📚 Prompt Engineering Resources</h4>
+                <a href="https://docs.anthropic.com/claude/docs/prompt-engineering" target="_blank" class="resource-link">Anthropic Prompt Engineering Guide</a>
+                <a href="https://platform.openai.com/docs/guides/prompt-engineering" target="_blank" class="resource-link">OpenAI Prompt Engineering</a>
+                <a href="https://www.promptingguide.ai" target="_blank" class="resource-link">Prompt Engineering Guide (Academic)</a>
+            </div>
+            
+            <h4>Effective Prompt Structure</h4>
+            <p><strong>The 5-Part Framework:</strong></p>
+            <div class="code-block">
+<code>1. Role: "As a UI designer creating Chakra UI components..."
+2. Context: "Using our custom theme with brand colors..."
+3. Task: "Generate a Button component with..."
+4. Constraints: "Must be accessible, TypeScript, use theme tokens..."
+5. Output Format: "Export as React component with..."</code>
+            </div>
+            
+            <p><strong>Why This Structure Works:</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li><strong>Role:</strong> Sets AI's perspective and expertise level</li>
+                <li><strong>Context:</strong> Provides design system awareness</li>
+                <li><strong>Task:</strong> Clear, specific instructions</li>
+                <li><strong>Constraints:</strong> Ensures quality and consistency</li>
+                <li><strong>Output Format:</strong> Gets exactly what you need</li>
+            </ul>
+            
+            <div class="resource-card">
+                <h4>📚 Research & Best Practices</h4>
+                <a href="https://arxiv.org/abs/2303.11306" target="_blank" class="resource-link">Prompt Engineering Research Paper</a>
+                <a href="https://learnprompting.org" target="_blank" class="resource-link">Learn Prompting (Free Course)</a>
+            </div>
+            
+            <h3>Component Generation Patterns</h3>
+            
+            <h4>Pattern 1: Atomic Components (Buttons, Inputs)</h4>
+            <div class="code-block">
+<code>Generate a Chakra UI Button component:
+- Variants: primary, secondary, outline
+- Sizes: sm, md, lg
+- States: default, hover, active, disabled, loading
+- Use theme tokens: brand.500 for primary
+- Include TypeScript types
+- Accessible (ARIA labels)
+- Export as React component</code>
+            </div>
+            
+            <div class="resource-card">
+                <h4>📚 Chakra UI Component Resources</h4>
+                <a href="https://chakra-ui.com/docs/components/button" target="_blank" class="resource-link">Chakra UI Button Docs</a>
+                <a href="https://chakra-ui.com/docs/components/input" target="_blank" class="resource-link">Chakra UI Input Docs</a>
+                <a href="https://chakra-ui.com/docs/components" target="_blank" class="resource-link">All Chakra UI Components</a>
+            </div>
+            
+            <h4>Pattern 2: Composite Components (Forms, Cards)</h4>
+            <div class="code-block">
+<code>Generate a Chakra UI FormField component:
+- Combines: FormControl, FormLabel, Input, FormErrorMessage
+- Props: label, error, helperText, isRequired
+- Use theme spacing tokens
+- Accessible form validation
+- TypeScript types included
+- Export as React component</code>
+            </div>
+            
+            <div class="resource-card">
+                <h4>📚 Form Components</h4>
+                <a href="https://chakra-ui.com/docs/components/form-control" target="_blank" class="resource-link">Chakra UI FormControl</a>
+                <a href="https://chakra-ui.com/docs/components/card" target="_blank" class="resource-link">Chakra UI Card</a>
+            </div>
+            
+            <h4>Pattern 3: Complex Components (Data Tables, Modals)</h4>
+            <div class="code-block">
+<code>Generate a Chakra UI DataTable component:
+- Props: data, columns, onRowClick
+- Features: sorting, filtering, pagination
+- Use theme colors and spacing
+- Responsive design
+- Accessible keyboard navigation
+- TypeScript types included</code>
+            </div>
+            
+            <h3>Pros/Cons of AI Generation</h3>
+            <p><strong>Pros:</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>✅ Speed: 15 min vs. 2 hours manual</li>
+                <li>✅ Consistency: Uses design system automatically</li>
+                <li>✅ Accessibility: Built-in ARIA support</li>
+                <li>✅ TypeScript: Types included by default</li>
+            </ul>
+            
+            <p><strong>Cons:</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>❌ May need refinement</li>
+                <li>❌ Requires good prompts</li>
+                <li>❌ Less creative control</li>
+                <li>❌ May not match exact design intent</li>
+            </ul>
+            
+            <h3>Exercise: Create Prompt Library</h3>
+            <p>Create a document with reusable prompts for each component type. This will save you time and ensure consistency.</p>
+            
+            <div class="checklist">
+                <li>1. Create prompt templates for atomic components</li>
+                <li>2. Create prompt templates for composite components</li>
+                <li>3. Create prompt templates for complex components</li>
+                <li>4. Test each template with Claude Code</li>
+                <li>5. Refine prompts based on results</li>
+                <li>6. Document what works and what doesn't</li>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🌆 Afternoon Session: Component Library Building (3 hours)</h2>
+            
+            <h3>Component Library Sprint</h3>
+            <p><strong>Goal:</strong> Build 10+ production-ready components</p>
+            
+            <h4>Phase 1: Atomic Components (1 hour)</h4>
+            <p>Generate these 5 components:</p>
+            <div class="checklist">
+                <li>1. Button (primary, secondary, outline variants)</li>
+                <li>2. Input (text, email, password types)</li>
+                <li>3. Card (with header, body, footer)</li>
+                <li>4. Badge (status indicators)</li>
+                <li>5. Avatar (with fallback, sizes)</li>
+            </div>
+            
+            <div class="resource-card">
+                <h4>📚 Component Reference</h4>
+                <a href="https://chakra-ui.com/docs/components/button" target="_blank" class="resource-link">Button Component</a>
+                <a href="https://chakra-ui.com/docs/components/input" target="_blank" class="resource-link">Input Component</a>
+                <a href="https://chakra-ui.com/docs/components/card" target="_blank" class="resource-link">Card Component</a>
+                <a href="https://chakra-ui.com/docs/components/badge" target="_blank" class="resource-link">Badge Component</a>
+                <a href="https://chakra-ui.com/docs/components/avatar" target="_blank" class="resource-link">Avatar Component</a>
+            </div>
+            
+            <h4>Phase 2: Composite Components (1 hour)</h4>
+            <p>Generate these 3 components:</p>
+            <div class="checklist">
+                <li>1. FormField (label, input, error message)</li>
+                <li>2. SearchBar (input + icon + clear button)</li>
+                <li>3. Navigation (horizontal menu with active states)</li>
+            </div>
+            
+            <h4>Phase 3: Complex Components (1 hour)</h4>
+            <p>Generate these 2 components:</p>
+            <div class="checklist">
+                <li>1. DataTable (sorting, filtering, pagination)</li>
+                <li>2. Modal (overlay, header, body, footer, close)</li>
+            </div>
+            
+            <h3>Component Quality Checklist</h3>
+            <p>For each component, verify:</p>
+            <div class="checklist">
+                <li>✅ Uses theme tokens (colors, spacing, typography)</li>
+                <li>✅ TypeScript types complete (no `any` types)</li>
+                <li>✅ Accessible (ARIA labels, keyboard navigation)</li>
+                <li>✅ Responsive (works on mobile and desktop)</li>
+                <li>✅ Documented (usage examples, props explained)</li>
+                <li>✅ Tested (renders correctly, interactions work)</li>
+            </div>
+            
+            <div class="resource-card">
+                <h4>📚 Testing & Quality Resources</h4>
+                <a href="https://www.w3.org/WAI/WCAG21/quickref/" target="_blank" class="resource-link">WCAG 2.1 Quick Reference</a>
+                <a href="https://chakra-ui.com/docs/getting-started" target="_blank" class="resource-link">Chakra UI Getting Started</a>
+            </div>
+            
+            <h3>Documentation Template</h3>
+            <p>For each component, create documentation:</p>
+            <div class="code-block">
+<code># ComponentName
+
+## Description
+[What it is and when to use it]
+
+## Props
+[All props with types and descriptions]
+
+## Variants
+[List all variants with examples]
+
+## Usage Example
+[Code example showing how to use]
+
+## Accessibility
+[ARIA labels, keyboard navigation, screen reader support]</code>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🧠 Expert Advice & Invaluable Takeaways</h2>
+            
+            <h3>Strategic Perspective: Prompt Engineering as Design Skill</h3>
+            <p><strong>From "Designing With AI" (Smashing Magazine):</strong> Prompt engineering isn't just about getting AI to do what you want—it's about teaching AI to think like a designer. The "Reasoning Before Understanding" (RBU) technique shows that prompts that first ask AI to infer purpose, user, assumptions, and contexts produce better results than direct requests.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Source: Advanced AI Design Techniques</h4>
+                <a href="https://www.smashingmagazine.com/2025/08/designing-with-ai-practical-techniques-product-design/" target="_blank" class="resource-link">Smashing Magazine: Designing With AI</a>
+            </div>
+            
+            <p><strong>Tree of Thought (ToT) Prompting:</strong> Instead of asking for one solution, use branching reasoning paths. Ask AI to explore multiple alternatives before choosing. This is especially powerful for UX audits, alternative flows, and trade-off analysis.</p>
+            
+            <h3>Tactical Perspective: Prompt Patterns from AI's Point of View</h3>
+            <p><strong>Why Structured Prompts Work Better:</strong> AI models process information hierarchically. When you structure prompts with clear sections (Context → Task → Constraints → Output Format), AI can parse and execute more accurately. This is why prompt templates outperform ad-hoc prompts.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Source: Prompt Engineering Research</h4>
+                <a href="https://www.anthropic.com/research" target="_blank" class="resource-link">Anthropic Research Papers</a>
+                <a href="https://docs.anthropic.com/claude/docs/prompt-engineering" target="_blank" class="resource-link">Claude Prompt Engineering Guide</a>
+            </div>
+            
+            <p><strong>Immediate Application:</strong> When building your prompt library, use the structure: Context (what AI needs to know) → Task (what to do) → Constraints (rules to follow) → Output Format (how to present results). This pattern works across all component types.</p>
+            
+            <h3>Engineering Perspective: Component Generation Quality</h3>
+            <p><strong>From Dive Club's "Future of Design Tooling":</strong> AI-generated components need human QA, but the QA should focus on design intent, not syntax errors. When prompts are well-structured and MCP provides design system context, AI generates syntactically correct code. The human role shifts to validating design decisions, accessibility, and edge cases.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Source: Dive Club on Design Tooling</h4>
+                <a href="https://www.dive.club/ideas/the-future-of-design-tooling" target="_blank" class="resource-link">Dive Club: Future of Design Tooling</a>
+            </div>
+            
+            <h3>Product Design Perspective: Component Documentation as Design</h3>
+            <p><strong>From Chakra UI Best Practices:</strong> Component documentation isn't just for developers—it's a design artifact. Well-documented components reduce design debt, enable team consistency, and help AI understand component intent. When AI can read your documentation, it generates better components.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Source: Component Documentation Standards</h4>
+                <a href="https://storybook.js.org/docs/react/get-started/introduction" target="_blank" class="resource-link">Storybook Documentation Guide</a>
+                <a href="https://chakra-ui.com/docs/components" target="_blank" class="resource-link">Chakra UI Component Docs</a>
+            </div>
+            
+            <h3>B2B SaaS Perspective: Component Reusability ROI</h3>
+            <p><strong>Business Impact:</strong> For B2B SaaS products, component reusability directly impacts development velocity. When you build 10 components today, you're not just building 10 components—you're building the foundation for 100+ features. Each well-documented, reusable component saves hours of future development time.</p>
+            
+            <p><strong>Calculation:</strong> If each component is used in 5 features on average, and each reuse saves 2 hours of development time, your 10 components today save 100 hours of future development. At $100/hour developer cost, that's $10,000 in value.</p>
+            
+            <h3>Debate Points: Prompt Templates vs. Custom Prompts</h3>
+            
+            <h4>Argument FOR Prompt Templates:</h4>
+            <p><strong>Pro:</strong> Templates ensure consistency, reduce errors, and enable team standardization. They're faster to use and easier to improve over time.</p>
+            <p><strong>Source:</strong> <a href="https://docs.anthropic.com/claude/docs/prompt-engineering" target="_blank">Claude Prompt Engineering Guide</a></p>
+            
+            <h4>Argument FOR Custom Prompts:</h4>
+            <p><strong>Pro:</strong> Custom prompts allow for specific context, unique requirements, and creative solutions. They're more flexible for edge cases.</p>
+            
+            <p><strong>Resolution:</strong> Use templates for 80% of components (standard patterns). Use custom prompts for 20% (unique requirements, experiments). Document both in your prompt library.</p>
+            
+            <h3>Key Artifacts for Team Presentation</h3>
+            <div class="artifact-box">
+                <p><strong>Present to your team at end of Day 3:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>📚 <strong>Prompt Library:</strong> 10+ tested prompt templates with examples</li>
+                    <li>🧩 <strong>Component Showcase:</strong> 10+ components with before/after (prompt → component)</li>
+                    <li>📊 <strong>Quality Metrics:</strong> Time saved, consistency achieved, errors reduced</li>
+                    <li>💡 <strong>Prompt Engineering Insights:</strong> What worked, what didn't, why</li>
+                    <li>📝 <strong>Documentation Examples:</strong> Show how well-documented components help AI</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>✅ Today's Artifacts</h2>
+            <div class="artifact-box">
+                <p><strong>Required Artifacts:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>📚 Prompt library (10+ prompt templates)</li>
+                    <li>🧩 Component library (10+ components)</li>
+                    <li>📝 Component documentation</li>
+                    <li>💻 Working code examples</li>
+                    <li>📸 Screenshots of components rendered</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🎯 Checkpoint</h2>
+            <p>Before moving to Day 4, verify:</p>
+            <ul class="checklist">
+                <li>✅ Prompt library created and tested</li>
+                <li>✅ 10+ components generated</li>
+                <li>✅ All components use theme tokens</li>
+                <li>✅ Components are accessible</li>
+                <li>✅ Documentation complete</li>
+                <li>✅ Ready to learn Agents tomorrow</li>
+            </ul>
+        </div>
+        
+        <div style="text-align: center; margin: 40px 0;">
+            <a href="day2.html" class="btn btn-secondary">← Day 2</a>
+            <a href="day4.html" class="btn">Continue to Day 4 →</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

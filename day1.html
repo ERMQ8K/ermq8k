@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 1: Tool Stack Setup & AI Fundamentals | AI Rapid Prototyping</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .nav {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .nav a {
+            color: #667eea;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        
+        .nav a:hover {
+            text-decoration: underline;
+        }
+        
+        .section {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            color: #667eea;
+            margin: 30px 0 20px 0;
+            font-size: 1.5em;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #764ba2;
+            margin: 20px 0 10px 0;
+            font-size: 1.2em;
+        }
+        
+        .time-badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+        
+        .checklist {
+            list-style: none;
+            margin: 15px 0;
+        }
+        
+        .checklist li {
+            padding: 10px;
+            margin: 5px 0;
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+        }
+        
+        .resource-card {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .resource-card h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .resource-link {
+            display: inline-block;
+            color: #667eea;
+            text-decoration: none;
+            margin: 5px 10px 5px 0;
+            padding: 8px 15px;
+            background: white;
+            border-radius: 5px;
+            border: 1px solid #667eea;
+            transition: all 0.3s;
+        }
+        
+        .resource-link:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        
+        .code-block code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+        
+        .pro-tip {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .pro-tip strong {
+            color: #856404;
+        }
+        
+        .artifact-box {
+            background: #e7f3ff;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 10px 10px 0;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #5568d3;
+        }
+        
+        .btn-secondary {
+            background: #6c757d;
+        }
+        
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="index.html">← Back to Curriculum</a>
+            <a href="day2.html">Next: Day 2 →</a>
+        </div>
+        
+        <header>
+            <h1>Day 1: Tool Stack Setup & AI Fundamentals</h1>
+            <span class="time-badge">⏱️ 6 hours (Morning: 3h | Afternoon: 3h)</span>
+        </header>
+        
+        <div class="section">
+            <h2>🎯 Today's Goals</h2>
+            <ul class="checklist">
+                <li>✅ Install and configure all AI tools (Claude Code, Lovable, Warp, Cursor)</li>
+                <li>✅ Set up MCP connection for Chakra UI</li>
+                <li>✅ Understand AI tool selection and decision-making</li>
+                <li>✅ Generate your first AI component</li>
+                <li>✅ Create decision framework document</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>🌅 Morning Session: Tool Installation & Configuration (3 hours)</h2>
+            
+            <h3>Step 1: Install Claude Code (30 minutes)</h3>
+            <p><strong>What is Claude Code?</strong> Claude Code is Anthropic's AI coding assistant with Agents (autonomous helpers) and Skills (reusable workflows). It's specifically designed for design system work with superior context understanding.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Installation Resources</h4>
+                <a href="https://claude.ai/code" target="_blank" class="resource-link">Claude Code Official Site</a>
+                <a href="https://docs.anthropic.com/claude/code" target="_blank" class="resource-link">Claude Code Documentation</a>
+                <a href="https://www.anthropic.com/news/claude-code" target="_blank" class="resource-link">Claude Code Announcement</a>
+            </div>
+            
+            <div class="checklist">
+                <li>1. Go to <a href="https://claude.ai/code" target="_blank">claude.ai/code</a></li>
+                <li>2. Sign up or log in to your Anthropic account</li>
+                <li>3. Download Claude Code app for your OS</li>
+                <li>4. Install and open the application</li>
+                <li>5. Authenticate your account</li>
+            </div>
+            
+            <div class="pro-tip">
+                <strong>💡 Pro Tip:</strong> Claude Code requires Claude Pro subscription ($20/month). If you don't have it, sign up now to avoid delays.
+            </div>
+            
+            <h3>Step 2: Set Up Lovable (30 minutes)</h3>
+            <p><strong>What is Lovable?</strong> Lovable is an AI-powered platform that converts designs to interactive prototypes. It generates real React components, not just mockups.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Lovable Resources</h4>
+                <a href="https://lovable.dev" target="_blank" class="resource-link">Lovable Official Site</a>
+                <a href="https://docs.lovable.dev" target="_blank" class="resource-link">Lovable Documentation</a>
+                <a href="https://www.youtube.com/watch?v=lovable-demo" target="_blank" class="resource-link">Lovable Demo Video</a>
+            </div>
+            
+            <div class="checklist">
+                <li>1. Go to <a href="https://lovable.dev" target="_blank">lovable.dev</a></li>
+                <li>2. Sign up with GitHub or Google account</li>
+                <li>3. Create your first project</li>
+                <li>4. Explore the interface (optional: connect Figma later)</li>
+                <li>5. Familiarize yourself with the workspace</li>
+            </div>
+            
+            <h3>Step 3: Install Warp Terminal (15 minutes)</h3>
+            <p><strong>What is Warp?</strong> Warp is a modern terminal with AI assistance, perfect for Git operations and workflow automation.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Warp Resources</h4>
+                <a href="https://www.warp.dev" target="_blank" class="resource-link">Warp Official Site</a>
+                <a href="https://docs.warp.dev" target="_blank" class="resource-link">Warp Documentation</a>
+            </div>
+            
+            <div class="checklist">
+                <li>1. Go to <a href="https://www.warp.dev" target="_blank">warp.dev</a></li>
+                <li>2. Download for your OS (macOS, Linux, Windows)</li>
+                <li>3. Install and launch Warp</li>
+                <li>4. Complete initial setup wizard</li>
+            </div>
+            
+            <h3>Step 4: Install Cursor IDE (15 minutes)</h3>
+            <p><strong>What is Cursor?</strong> Cursor is an AI-powered code editor built for AI-assisted development, perfect for refining generated code.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Cursor Resources</h4>
+                <a href="https://cursor.sh" target="_blank" class="resource-link">Cursor Official Site</a>
+                <a href="https://docs.cursor.sh" target="_blank" class="resource-link">Cursor Documentation</a>
+            </div>
+            
+            <div class="checklist">
+                <li>1. Go to <a href="https://cursor.sh" target="_blank">cursor.sh</a></li>
+                <li>2. Download Cursor for your OS</li>
+                <li>3. Install and open Cursor</li>
+                <li>4. Sign in and configure AI models</li>
+            </div>
+            
+            <h3>Step 5: Configure MCP for Chakra UI (1 hour)</h3>
+            <p><strong>What is MCP?</strong> Model Context Protocol (MCP) connects Claude to external tools and data, enabling direct access to your Chakra UI design system.</p>
+            
+            <div class="resource-card">
+                <h4>📚 MCP Resources</h4>
+                <a href="https://modelcontextprotocol.io" target="_blank" class="resource-link">MCP Official Site</a>
+                <a href="https://docs.anthropic.com/claude/docs/mcp" target="_blank" class="resource-link">Claude MCP Documentation</a>
+                <a href="https://github.com/modelcontextprotocol/servers" target="_blank" class="resource-link">MCP Server Examples</a>
+            </div>
+            
+            <p><strong>MCP Configuration:</strong></p>
+            <div class="code-block">
+<code>{
+  "mcpServers": {
+    "chakra-ui": {
+      "command": "npx",
+      "args": ["@chakra-ui/mcp-server"],
+      "env": {
+        "CHAKRA_THEME_PATH": "./theme.ts"
+      }
+    }
+  }
+}</code>
+            </div>
+            
+            <div class="checklist">
+                <li>1. In Claude Code, open Settings → MCP</li>
+                <li>2. Add new MCP server configuration</li>
+                <li>3. Use the configuration above (or create custom server)</li>
+                <li>4. Test the connection</li>
+                <li>5. Verify Claude can access Chakra UI components</li>
+            </div>
+            
+            <div class="pro-tip">
+                <strong>💡 Pro Tip:</strong> MCP setup can be tricky. If you encounter issues, check the MCP server logs and ensure Node.js is installed. You may need to create a custom MCP server for Chakra UI if the official one doesn't exist yet.
+            </div>
+            
+            <h3>Step 6: Test Tool Integrations (30 minutes)</h3>
+            <div class="checklist">
+                <li>✅ Claude Code opens and connects to MCP</li>
+                <li>✅ Lovable project created successfully</li>
+                <li>✅ Warp terminal working</li>
+                <li>✅ Cursor IDE opens and AI features work</li>
+                <li>✅ All tools authenticated and ready</li>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🌆 Afternoon Session: AI Fundamentals & Decision Framework (3 hours)</h2>
+            
+            <h3>Deep Dive: Why These Tools?</h3>
+            
+            <h4>Claude Code vs. ChatGPT Code Interpreter</h4>
+            <p><strong>Decision: Use Claude Code for design system work</strong></p>
+            
+            <div class="resource-card">
+                <h4>📚 Research & Sources</h4>
+                <a href="https://www.anthropic.com/research" target="_blank" class="resource-link">Anthropic Research</a>
+                <a href="https://www.anthropic.com/news/claude-3-5-sonnet" target="_blank" class="resource-link">Claude 3.5 Sonnet Announcement</a>
+                <a href="https://docs.anthropic.com/claude/docs" target="_blank" class="resource-link">Claude Technical Documentation</a>
+            </div>
+            
+            <p><strong>Pros of Claude Code:</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>✅ Superior context understanding (200K token window vs. 128K)</li>
+                <li>✅ Better at maintaining design system consistency</li>
+                <li>✅ Agents enable autonomous workflows</li>
+                <li>✅ MCP integration for design systems</li>
+                <li>✅ More specialized for design system work</li>
+            </ul>
+            
+            <p><strong>Cons of Claude Code:</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>❌ Newer tool, smaller community</li>
+                <li>❌ Requires Claude Pro subscription ($20/month)</li>
+                <li>❌ Less general coding knowledge than ChatGPT</li>
+            </ul>
+            
+            <p><strong>Rationale:</strong> Design systems require deep context understanding and consistency, which Claude Code excels at through MCP integration and Agents. The 200K token window allows Claude to maintain awareness of your entire design system while generating components.</p>
+            
+            <h4>Lovable vs. Traditional Prototyping</h4>
+            <p><strong>Decision: Use Lovable for rapid prototyping, Figma for ideation</strong></p>
+            
+            <div class="resource-card">
+                <h4>📚 Lovable Resources</h4>
+                <a href="https://docs.lovable.dev" target="_blank" class="resource-link">Lovable Documentation</a>
+                <a href="https://blog.lovable.dev" target="_blank" class="resource-link">Lovable Blog</a>
+            </div>
+            
+            <p><strong>Comparison:</strong></p>
+            <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+                <tr style="background: #f8f9fa;">
+                    <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Feature</th>
+                    <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Lovable</th>
+                    <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Figma Prototypes</th>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Time to Prototype</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">2-4 hours</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">1-2 days</td>
+                </tr>
+                <tr style="background: #f8f9fa;">
+                    <td style="padding: 10px; border: 1px solid #ddd;">Interactivity</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Full (forms, state, APIs)</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Limited (clicks, hovers)</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Code Output</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Real React components</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">None (visual only)</td>
+                </tr>
+                <tr style="background: #f8f9fa;">
+                    <td style="padding: 10px; border: 1px solid #ddd;">Engineering Handoff</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Production-ready code</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Requires separate dev</td>
+                </tr>
+            </table>
+            
+            <h4>MCP (Model Context Protocol) Explained</h4>
+            <p><strong>Decision: Essential for design system work, worth the setup</strong></p>
+            
+            <div class="resource-card">
+                <h4>📚 MCP Deep Dive</h4>
+                <a href="https://modelcontextprotocol.io" target="_blank" class="resource-link">MCP Specification</a>
+                <a href="https://github.com/modelcontextprotocol" target="_blank" class="resource-link">MCP GitHub</a>
+                <a href="https://docs.anthropic.com/claude/docs/mcp" target="_blank" class="resource-link">Claude MCP Guide</a>
+            </div>
+            
+            <p><strong>How MCP Works:</strong></p>
+            <p>MCP creates a standardized protocol for AI models to access external tools and data. For design systems, this means:</p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>AI Model (Claude) ↔ MCP Server ↔ External Tool (Chakra UI)</li>
+                <li>Direct access to your design system components</li>
+                <li>Automatic theme awareness</li>
+                <li>Consistent component generation</li>
+            </ul>
+            
+            <p><strong>Why MCP for Design Systems?</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>✅ Problem: AI doesn't know your design system by default</li>
+                <li>✅ Solution: MCP provides design system context to AI</li>
+                <li>✅ Benefit: Consistent, on-brand component generation</li>
+                <li>✅ Reduces prompt engineering overhead</li>
+            </ul>
+            
+            <h3>Exercise: Create Decision Framework Document</h3>
+            <p>Create a document that captures your tool selection decisions and rationale. This will help you make informed decisions throughout the program.</p>
+            
+            <div class="code-block">
+<code># Tool Selection Decision Framework
+
+## Claude Code
+- **Decision**: Use for design system work
+- **Rationale**: Superior context, MCP integration, Agents
+- **When to use**: Component generation, design system code
+- **When not to use**: General coding, one-off scripts
+
+## Lovable
+- **Decision**: Use for rapid prototyping
+- **Rationale**: Real React components, fast iteration
+- **When to use**: Customer research, engineering handoff
+- **When not to use**: Early ideation (use Figma)
+
+## MCP
+- **Decision**: Essential for production design systems
+- **Rationale**: Consistency, theme awareness, reduced prompts
+- **When to use**: Building design system, team standardization
+- **When not to use**: One-off components, experiments</code>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🧠 Expert Advice & Invaluable Takeaways</h2>
+            
+            <h3>Strategic Perspective: The AI Systems Designer Role</h3>
+            <p><strong>From Ridd (Dive Club):</strong> The future of product design requires a new role—the "AI Systems Designer"—who bridges design, product, engineering, and AI strategy. This role isn't just about designing chat UIs; it's about understanding how AI affects every touchpoint in the user experience.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Source: Ridd's "Introducing the AI Systems Designer"</h4>
+                <a href="https://www.dive.club/ideas/introducing-the-ai-systems-designer" target="_blank" class="resource-link">Dive Club: AI Systems Designer</a>
+            </div>
+            
+            <p><strong>Key Takeaway for Today:</strong> As you set up your tool stack, think beyond individual tools. Consider how these tools work together as a <em>system</em> that enables rapid iteration, maintains design consistency, and bridges design-to-engineering workflows.</p>
+            
+            <h3>Tactical Perspective: Tool Selection from AI's Point of View</h3>
+            <p><strong>Why Claude Code Excels for Design Systems:</strong> From Anthropic's research, Claude's 200K token context window and MCP integration mean it can maintain awareness of your entire design system while generating components. This is critical for consistency—AI needs to "remember" your design tokens, component patterns, and brand guidelines throughout a session.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Sources: Anthropic Research & MCP Specification</h4>
+                <a href="https://www.anthropic.com/research" target="_blank" class="resource-link">Anthropic Research Papers</a>
+                <a href="https://modelcontextprotocol.io" target="_blank" class="resource-link">MCP Specification</a>
+                <a href="https://www.anthropic.com/news/claude-3-5-sonnet" target="_blank" class="resource-link">Claude 3.5 Sonnet Announcement</a>
+            </div>
+            
+            <p><strong>Immediate Application:</strong> When setting up MCP, think about what context your AI needs. Don't just connect Chakra UI—consider connecting your brand guidelines, accessibility standards, and component usage patterns. The richer the context, the better AI-generated components will be.</p>
+            
+            <h3>Business Perspective: ROI of AI-Enabled Prototyping</h3>
+            <p><strong>Time-to-Value Analysis:</strong> Traditional prototyping workflows take 1-2 days per feature. With Lovable + Claude Code, you can prototype in 2-4 hours. For a B2B SaaS team shipping 10 features per month, this translates to:</p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>✅ <strong>Time saved:</strong> 10-16 days/month (120-192 days/year)</li>
+                <li>✅ <strong>Faster customer feedback:</strong> Test ideas 3-4x faster</li>
+                <li>✅ <strong>Reduced engineering rework:</strong> Better prototypes = clearer requirements</li>
+            </ul>
+            
+            <div class="resource-card">
+                <h4>📚 Source: Design-to-Prototype Efficiency Studies</h4>
+                <a href="https://www.smashingmagazine.com/2025/08/designing-with-ai-practical-techniques-product-design/" target="_blank" class="resource-link">Smashing Magazine: Designing With AI</a>
+            </div>
+            
+            <h3>Engineering Perspective: Code Quality from Day One</h3>
+            <p><strong>From "Future of Design Tooling" (Dive Club):</strong> Designers who can prototype and understand code get better outcomes. QA shouldn't be a handoff—it should be built into the design process. Tools like Cursor and Lovable generate real code, which means you can catch issues early.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Source: Dive Club on Design Tooling</h4>
+                <a href="https://www.dive.club/ideas/the-future-of-design-tooling" target="_blank" class="resource-link">Dive Club: Future of Design Tooling</a>
+            </div>
+            
+            <p><strong>Critical Insight:</strong> The gap between design and engineering is shrinking. Your tool stack should enable you to generate production-ready code, not just mockups. This means learning to read and refine code, not just design it.</p>
+            
+            <h3>Product Design Perspective: Customer-Centric Prototyping</h3>
+            <p><strong>From "Designing With AI" (Smashing Magazine):</strong> AI-enabled prototyping isn't just faster—it enables you to test more ideas with customers. The "Reasoning Before Understanding" (RBU) technique suggests: before asking AI to critique a design, first have it infer the purpose, user, assumptions, and contexts. This leads to better customer-aligned prototypes.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Source: Advanced AI Design Techniques</h4>
+                <a href="https://www.smashingmagazine.com/2025/08/designing-with-ai-practical-techniques-product-design/" target="_blank" class="resource-link">Smashing Magazine: AI Design Techniques</a>
+            </div>
+            
+            <p><strong>Practice Today:</strong> When you generate your first component, don't just ask for "a button." Ask AI to reason about: "Who will use this button? What problem does it solve? What assumptions are we making?" Then generate the component based on that understanding.</p>
+            
+            <h3>Debate Points: Subject Matter Expert Perspectives</h3>
+            
+            <h4>Argument FOR MCP Setup Complexity:</h4>
+            <p><strong>Pro:</strong> MCP setup is worth the initial complexity because it provides long-term consistency. Once configured, every AI-generated component follows your design system automatically.</p>
+            <p><strong>Source:</strong> <a href="https://modelcontextprotocol.io" target="_blank">MCP Specification</a> and <a href="https://docs.anthropic.com/claude/docs/mcp" target="_blank">Claude MCP Documentation</a></p>
+            
+            <h4>Argument AGAINST MCP Setup Complexity:</h4>
+            <p><strong>Con:</strong> MCP adds setup overhead. For small teams or one-off projects, well-crafted prompts might be faster than MCP configuration.</p>
+            <p><strong>Resolution:</strong> Use MCP for production design systems (15+ components, team use). Use prompts for experiments and one-offs.</p>
+            
+            <h3>Key Artifacts for Team Presentation</h3>
+            <div class="artifact-box">
+                <p><strong>Present to your team at end of Day 1:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>📊 <strong>Tool Stack Diagram:</strong> Visual showing how tools connect (Claude → MCP → Chakra UI, Lovable → React, etc.)</li>
+                    <li>💼 <strong>ROI Analysis:</strong> Time savings calculation for your team's workflow</li>
+                    <li>🎯 <strong>Decision Framework:</strong> When to use each tool (with examples)</li>
+                    <li>🔧 <strong>Setup Documentation:</strong> Step-by-step guide for other team members</li>
+                    <li>💡 <strong>Key Insights:</strong> 3-5 takeaways from expert sources (cite sources)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>✅ Today's Artifacts</h2>
+            <div class="artifact-box">
+                <p><strong>Required Artifacts:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>📸 Screenshots of all tools installed and configured</li>
+                    <li>📝 Decision framework document (tool comparison matrix)</li>
+                    <li>💻 First AI-generated component (if time permits)</li>
+                    <li>📋 Setup notes and any issues encountered</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🎯 Checkpoint</h2>
+            <p>Before moving to Day 2, verify:</p>
+            <ul class="checklist">
+                <li>✅ All tools installed and working</li>
+                <li>✅ MCP connection established (or documented workaround)</li>
+                <li>✅ Decision framework document created</li>
+                <li>✅ You understand why each tool was chosen</li>
+                <li>✅ Ready to start building design system tomorrow</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>📚 Additional Resources</h2>
+            <div class="resource-card">
+                <h4>Official Documentation</h4>
+                <a href="https://docs.anthropic.com" target="_blank" class="resource-link">Anthropic Documentation</a>
+                <a href="https://docs.lovable.dev" target="_blank" class="resource-link">Lovable Docs</a>
+                <a href="https://docs.warp.dev" target="_blank" class="resource-link">Warp Docs</a>
+                <a href="https://docs.cursor.sh" target="_blank" class="resource-link">Cursor Docs</a>
+            </div>
+            
+            <div class="resource-card">
+                <h4>Community & Support</h4>
+                <a href="https://community.anthropic.com" target="_blank" class="resource-link">Anthropic Community</a>
+                <a href="https://discord.gg/anthropic" target="_blank" class="resource-link">Anthropic Discord</a>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin: 40px 0;">
+            <a href="index.html" class="btn btn-secondary">← Back to Curriculum</a>
+            <a href="day2.html" class="btn">Continue to Day 2 →</a>
+        </div>
+    </div>
+</body>
+</html>

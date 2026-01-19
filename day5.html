@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 5: Design System Integration & Sync | AI Rapid Prototyping</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="day4.html">← Day 4</a>
+            <a href="index.html">Curriculum</a>
+            <a href="day6.html">Day 6 →</a>
+        </div>
+        
+        <header>
+            <h1>Day 5: Design System Integration & Sync</h1>
+            <span class="time-badge">⏱️ 6 hours (Morning: 3h | Afternoon: 3h)</span>
+        </header>
+        
+        <div class="section">
+            <h2>🎯 Today's Goals</h2>
+            <ul class="checklist">
+                <li>✅ Establish Figma ↔ Code synchronization</li>
+                <li>✅ Set up design token sync workflow</li>
+                <li>✅ Complete component library (15+ components)</li>
+                <li>✅ Document entire design system</li>
+                <li>✅ Create handoff documentation</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>🌅 Morning Session: Figma → Code Sync Strategy (3 hours)</h2>
+            
+            <h3>Deep Dive: Design System Sync Approaches</h3>
+            
+            <h4>Approach 1: Design Tokens Sync (Recommended)</h4>
+            <p><strong>How it works:</strong> Export tokens from Figma → Import to code</p>
+            
+            <div class="resource-card">
+                <h4>📚 Figma Tokens Plugin</h4>
+                <a href="https://www.figma.com/community/plugin/843461159747178946" target="_blank" class="resource-link">Figma Tokens Plugin</a>
+                <a href="https://docs.tokens.studio" target="_blank" class="resource-link">Tokens Studio Documentation</a>
+                <a href="https://github.com/amzn/style-dictionary" target="_blank" class="resource-link">Style Dictionary (Token Transform)</a>
+            </div>
+            
+            <p><strong>Pros:</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>✅ Single source of truth (Figma)</li>
+                <li>✅ Automatic updates</li>
+                <li>✅ No manual sync needed</li>
+                <li>✅ Works with any design system</li>
+            </ul>
+            
+            <p><strong>Cons:</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>❌ Requires plugin setup</li>
+                <li>❌ One-way sync (Figma → Code)</li>
+                <li>❌ Initial configuration time</li>
+            </ul>
+            
+            <h4>Setting Up Figma Tokens Plugin</h4>
+            <div class="checklist">
+                <li>1. Install Figma Tokens plugin in Figma</li>
+                <li>2. Create token structure (colors, spacing, typography)</li>
+                <li>3. Apply tokens to your designs</li>
+                <li>4. Export tokens to JSON</li>
+                <li>5. Set up Style Dictionary or custom transform</li>
+                <li>6. Import tokens to Chakra UI theme</li>
+                <li>7. Test sync workflow</li>
+            </div>
+            
+            <div class="resource-card">
+                <h4>📚 Style Dictionary Resources</h4>
+                <a href="https://amzn.github.io/style-dictionary/" target="_blank" class="resource-link">Style Dictionary Docs</a>
+                <a href="https://github.com/amzn/style-dictionary/tree/main/examples" target="_blank" class="resource-link">Style Dictionary Examples</a>
+            </div>
+            
+            <h4>Approach 2: Component Library Sync</h4>
+            <p><strong>How it works:</strong> Generate code from Figma components</p>
+            
+            <div class="resource-card">
+                <h4>📚 Figma to Code Resources</h4>
+                <a href="https://www.figma.com/community/plugins/tag/export" target="_blank" class="resource-link">Figma Export Plugins</a>
+                <a href="https://www.figma.com/developers/api" target="_blank" class="resource-link">Figma API Documentation</a>
+            </div>
+            
+            <p><strong>Pros:</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>✅ Visual → Code directly</li>
+                <li>✅ Maintains design intent</li>
+                <li>✅ Good for initial generation</li>
+            </ul>
+            
+            <p><strong>Cons:</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>❌ Requires regeneration</li>
+                <li>❌ May need refinement</li>
+                <li>❌ Less automated than tokens</li>
+            </ul>
+            
+            <p><strong>Decision:</strong> Use for initial generation, tokens for updates</p>
+            
+            <h4>Approach 3: Manual Sync (Not Recommended)</h4>
+            <p><strong>When:</strong> Small teams, infrequent updates</p>
+            <p><strong>Why avoid:</strong> Error-prone, time-consuming, doesn't scale</p>
+            
+            <h3>Implementation: Design Tokens Sync</h3>
+            <p><strong>Step 1: Install Figma Tokens Plugin</strong></p>
+            <div class="checklist">
+                <li>1. Open Figma</li>
+                <li>2. Go to Plugins → Browse plugins</li>
+                <li>3. Search "Tokens Studio for Figma"</li>
+                <li>4. Install plugin</li>
+                <li>5. Open plugin in your design file</li>
+            </div>
+            
+            <p><strong>Step 2: Create Token Structure</strong></p>
+            <div class="code-block">
+<code>Tokens Structure:
+├── Colors
+│   ├── Brand (primary, secondary)
+│   └── Semantic (success, error, warning)
+├── Spacing
+│   └── Scale (xs, sm, md, lg, xl)
+├── Typography
+│   ├── Font Families
+│   ├── Font Sizes
+│   └── Font Weights
+└── Effects
+    └── Shadows</code>
+            </div>
+            
+            <p><strong>Step 3: Export and Transform</strong></p>
+            <div class="code-block">
+<code>// Export from Figma Tokens
+// Transform using Style Dictionary
+// Output: theme.ts for Chakra UI</code>
+            </div>
+            
+            <div class="pro-tip">
+                <strong>💡 Pro Tip:</strong> Set up automated sync using GitHub Actions or similar CI/CD to keep tokens in sync automatically.
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🌆 Afternoon Session: Complete Design System (3 hours)</h2>
+            
+            <h3>Final Tasks</h3>
+            <div class="checklist">
+                <li>1. Complete component library (15+ components)</li>
+                <li>2. Document all components</li>
+                <li>3. Create usage guidelines</li>
+                <li>4. Test all components</li>
+                <li>5. Create handoff documentation</li>
+                <li>6. Set up Storybook (optional but recommended)</li>
+            </div>
+            
+            <h3>Component Library Checklist</h3>
+            <p><strong>Atomic Components (5+):</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>✅ Button</li>
+                <li>✅ Input</li>
+                <li>✅ Card</li>
+                <li>✅ Badge</li>
+                <li>✅ Avatar</li>
+            </ul>
+            
+            <p><strong>Composite Components (5+):</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>✅ FormField</li>
+                <li>✅ SearchBar</li>
+                <li>✅ Navigation</li>
+                <li>✅ Alert</li>
+                <li>✅ Breadcrumbs</li>
+            </ul>
+            
+            <p><strong>Complex Components (5+):</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>✅ DataTable</li>
+                <li>✅ Modal</li>
+                <li>✅ Dropdown Menu</li>
+                <li>✅ Tabs</li>
+                <li>✅ Accordion</li>
+            </ul>
+            
+            <h3>Design System Documentation Template</h3>
+            <div class="code-block">
+<code># Design System
+
+## Overview
+[What this design system is, who it's for]
+
+## Theme
+[Theme documentation, tokens, customization]
+
+## Components
+[Component library with usage examples]
+
+## Usage Guidelines
+[How to use components, best practices]
+
+## AI Generation
+[How to generate new components using AI]
+
+## Figma Sync
+[How to sync Figma → Code]
+
+## Contributing
+[How to add new components]</code>
+            </div>
+            
+            <div class="resource-card">
+                <h4>📚 Storybook Resources</h4>
+                <a href="https://storybook.js.org" target="_blank" class="resource-link">Storybook Official Site</a>
+                <a href="https://storybook.js.org/docs/react/get-started/introduction" target="_blank" class="resource-link">Storybook React Guide</a>
+                <a href="https://storybook.js.org/addons/@chakra-ui/storybook-addon" target="_blank" class="resource-link">Chakra UI Storybook Addon</a>
+            </div>
+            
+            <h3>Optional: Set Up Storybook</h3>
+            <p>Storybook provides a visual component library for your design system.</p>
+            
+            <div class="checklist">
+                <li>1. Install Storybook: <code>npx storybook@latest init</code></li>
+                <li>2. Configure for React + TypeScript</li>
+                <li>3. Add Chakra UI provider</li>
+                <li>4. Create stories for each component</li>
+                <li>5. Document component props and variants</li>
+                <li>6. Deploy Storybook (optional)</li>
+            </div>
+            
+            <h3>Handoff Documentation</h3>
+            <p>Create documentation for engineering handoff:</p>
+            <div class="code-block">
+<code># Component Handoff: [Component Name]
+
+## Design Specs
+- Figma link: [link]
+- Design tokens used: [list]
+- Variants: [list]
+
+## Code
+- Component file: [path]
+- Props: [list with types]
+- Usage: [example]
+
+## Implementation Notes
+- Important decisions: [list]
+- Gotchas: [list]
+- Dependencies: [list]
+
+## Testing
+- Test cases: [list]
+- Edge cases: [list]</code>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🧠 Expert Advice & Invaluable Takeaways</h2>
+            
+            <h3>Strategic Perspective: Design System Sync as Single Source of Truth</h3>
+            <p><strong>From "Designing With AI" (Smashing Magazine):</strong> Figma → Code sync isn't just about efficiency—it's about creating a single source of truth. When design tokens live in Figma and sync automatically to code, you eliminate the drift between design and implementation. This is critical for B2B SaaS where design consistency directly impacts customer trust.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Source: Design Token Sync Best Practices</h4>
+                <a href="https://www.smashingmagazine.com/2025/08/designing-with-ai-practical-techniques-product-design/" target="_blank" class="resource-link">Smashing Magazine: Designing With AI</a>
+                <a href="https://tr.designtokens.org/format/" target="_blank" class="resource-link">W3C Design Tokens Format</a>
+            </div>
+            
+            <p><strong>Business Impact:</strong> Design drift (when code doesn't match designs) causes rework, customer confusion, and support burden. Automated sync eliminates drift, saving 5-10 hours per month in rework. For a team of 5 designers, that's 25-50 hours monthly—$2,500-$5,000 in value.</p>
+            
+            <h3>Tactical Perspective: Design Tokens from AI's Point of View</h3>
+            <p><strong>Why Tokens Sync Matters for AI:</strong> When AI generates components, it needs access to your design tokens. If tokens are in Figma but not synced to code, AI can't use them. MCP + Token Sync = AI that understands your design system completely.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Source: Figma Tokens Plugin</h4>
+                <a href="https://www.figma.com/community/plugin/843461159747178946" target="_blank" class="resource-link">Figma Tokens Plugin</a>
+                <a href="https://docs.tokens.studio" target="_blank" class="resource-link">Tokens Studio Documentation</a>
+            </div>
+            
+            <h3>Engineering Perspective: Component Library as Infrastructure</h3>
+            <p><strong>From Dive Club's "Future of Design Tooling":</strong> Your component library isn't just a collection of components—it's infrastructure. Just as you wouldn't build a product without a database, you shouldn't build features without a component library. It's the foundation that enables rapid prototyping and consistent design.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Source: Dive Club on Design Tooling</h4>
+                <a href="https://www.dive.club/ideas/the-future-of-design-tooling" target="_blank" class="resource-link">Dive Club: Future of Design Tooling</a>
+            </div>
+            
+            <h3>Product Design Perspective: Handoff Documentation as Design Artifact</h3>
+            <p><strong>From Chakra UI Best Practices:</strong> Handoff documentation isn't just for engineers—it's a design artifact that communicates design intent, edge cases, and usage patterns. Well-documented components reduce back-and-forth, enable faster implementation, and help AI understand component context.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Source: Component Documentation Standards</h4>
+                <a href="https://storybook.js.org/docs/react/get-started/introduction" target="_blank" class="resource-link">Storybook Documentation Guide</a>
+            </div>
+            
+            <h3>B2B SaaS Perspective: Design System ROI</h3>
+            <p><strong>Business Impact:</strong> A complete design system (15+ components) enables rapid feature development. If each feature uses 5 components on average, and each component saves 2 hours of development time, your design system saves 10 hours per feature. For 10 features per month, that's 100 hours saved—$10,000 monthly value.</p>
+            
+            <h3>Debate Points: Design Tokens Sync vs. Manual Sync</h3>
+            
+            <h4>Argument FOR Automated Token Sync:</h4>
+            <p><strong>Pro:</strong> Automated sync eliminates drift, reduces errors, and ensures consistency. Once set up, it works automatically.</p>
+            <p><strong>Source:</strong> <a href="https://www.figma.com/community/plugin/843461159747178946" target="_blank">Figma Tokens Plugin</a></p>
+            
+            <h4>Argument FOR Manual Sync:</h4>
+            <p><strong>Pro:</strong> Manual sync gives designers more control, allows for selective updates, and doesn't require plugin setup.</p>
+            
+            <p><strong>Resolution:</strong> Use automated sync for production design systems (15+ components, team use). Use manual sync for experiments and one-off projects. The key is consistency—choose one approach and stick with it.</p>
+            
+            <h3>Key Artifacts for Team Presentation</h3>
+            <div class="artifact-box">
+                <p><strong>Present to your team at end of Day 5:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>🔄 <strong>Sync Workflow Demo:</strong> Show Figma → Code sync in action</li>
+                    <li>🧩 <strong>Component Library Showcase:</strong> 15+ components with documentation</li>
+                    <li>📚 <strong>Design System Documentation:</strong> Complete guide for team use</li>
+                    <li>📊 <strong>ROI Analysis:</strong> Time saved, value created, consistency achieved</li>
+                    <li>💡 <strong>Expert Insights Summary:</strong> Key takeaways from today's sources</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>✅ Today's Artifacts</h2>
+            <div class="artifact-box">
+                <p><strong>Required Artifacts:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>🔄 Working Figma → Code sync workflow</li>
+                    <li>🧩 Complete component library (15+ components)</li>
+                    <li>📚 Design system documentation</li>
+                    <li>📝 Handoff documentation template</li>
+                    <li>📊 Component usage examples</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🎯 Week 1 Checkpoint</h2>
+            <p>Congratulations! You've completed Week 1. Verify:</p>
+            <ul class="checklist">
+                <li>✅ All tools mastered</li>
+                <li>✅ Chakra UI + MCP working</li>
+                <li>✅ 15+ components in library</li>
+                <li>✅ Agents and Skills created</li>
+                <li>✅ Design system complete</li>
+                <li>✅ Figma sync working</li>
+                <li>✅ Ready for rapid prototyping in Week 2!</li>
+            </ul>
+        </div>
+        
+        <div style="text-align: center; margin: 40px 0;">
+            <a href="day4.html" class="btn btn-secondary">← Day 4</a>
+            <a href="day6.html" class="btn">Continue to Day 6 →</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

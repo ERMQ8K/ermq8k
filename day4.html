@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 4: Claude Agents & Skills | AI Rapid Prototyping</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="day3.html">← Day 3</a>
+            <a href="index.html">Curriculum</a>
+            <a href="day5.html">Day 5 →</a>
+        </div>
+        
+        <header>
+            <h1>Day 4: Claude Agents & Skills</h1>
+            <span class="time-badge">⏱️ 6 hours (Morning: 3h | Afternoon: 3h)</span>
+        </header>
+        
+        <div class="section">
+            <h2>🎯 Today's Goals</h2>
+            <ul class="checklist">
+                <li>✅ Understand Agents vs. Simple Prompts</li>
+                <li>✅ Create your first Claude Agent</li>
+                <li>✅ Build reusable Skills library</li>
+                <li>✅ Document Agent workflows</li>
+                <li>✅ Test Agents with real components</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>🌅 Morning Session: Agents Architecture (3 hours)</h2>
+            
+            <h3>Deep Dive: Agents vs. Simple Prompts</h3>
+            
+            <div class="resource-card">
+                <h4>📚 Claude Agents Resources</h4>
+                <a href="https://docs.anthropic.com/claude/docs/agents" target="_blank" class="resource-link">Claude Agents Documentation</a>
+                <a href="https://www.anthropic.com/news/claude-3-5-sonnet" target="_blank" class="resource-link">Claude 3.5 Sonnet (Agents Support)</a>
+                <a href="https://docs.anthropic.com/claude/docs/agents-overview" target="_blank" class="resource-link">Agents Overview Guide</a>
+            </div>
+            
+            <h4>What Are Agents?</h4>
+            <p><strong>Definition:</strong> Autonomous AI helpers that complete multi-step tasks independently.</p>
+            
+            <p><strong>Key Differences:</strong></p>
+            <table>
+                <tr>
+                    <th>Feature</th>
+                    <th>Simple Prompts</th>
+                    <th>Agents</th>
+                </tr>
+                <tr>
+                    <td>Task Complexity</td>
+                    <td>Single-step</td>
+                    <td>Multi-step workflows</td>
+                </tr>
+                <tr>
+                    <td>Reusability</td>
+                    <td>One-time use</td>
+                    <td>Reusable across projects</td>
+                </tr>
+                <tr>
+                    <td>Autonomy</td>
+                    <td>Requires guidance</td>
+                    <td>Works independently</td>
+                </tr>
+                <tr>
+                    <td>Consistency</td>
+                    <td>Varies by prompt</td>
+                    <td>Standardized output</td>
+                </tr>
+            </table>
+            
+            <h4>When to Use Agents</h4>
+            <p><strong>Use Agents for:</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>✅ Repetitive component generation</li>
+                <li>✅ Design system updates</li>
+                <li>✅ Multi-step workflows</li>
+                <li>✅ Team standardization</li>
+                <li>✅ Complex tasks requiring multiple steps</li>
+            </ul>
+            
+            <p><strong>Use Simple Prompts for:</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>❌ One-off components</li>
+                <li>❌ Experimental work</li>
+                <li>❌ Quick iterations</li>
+                <li>❌ Simple, single-step tasks</li>
+            </ul>
+            
+            <h3>Agent Architecture</h3>
+            <p><strong>Component Generator Agent Structure:</strong></p>
+            <div class="code-block">
+<code>Agent: Chakra UI Component Generator
+├── Skill 1: Analyze Design Description
+├── Skill 2: Extract Design Tokens
+├── Skill 3: Generate Chakra UI Code
+├── Skill 4: Add TypeScript Types
+└── Skill 5: Ensure Accessibility</code>
+            </div>
+            
+            <h3>Creating Your First Agent</h3>
+            <p><strong>Agent Configuration:</strong></p>
+            <div class="code-block">
+<code>{
+  "name": "Chakra UI Component Generator",
+  "goal": "Generate Chakra UI components from design descriptions",
+  "skills": [
+    "analyze_design",
+    "extract_tokens",
+    "generate_component",
+    "add_types",
+    "ensure_accessibility"
+  ],
+  "context": {
+    "theme": "./theme.ts",
+    "design_system": "./design-system.md"
+  }
+}</code>
+            </div>
+            
+            <div class="resource-card">
+                <h4>📚 Agent Creation Resources</h4>
+                <a href="https://docs.anthropic.com/claude/docs/agents-getting-started" target="_blank" class="resource-link">Getting Started with Agents</a>
+                <a href="https://docs.anthropic.com/claude/docs/agents-best-practices" target="_blank" class="resource-link">Agent Best Practices</a>
+            </div>
+            
+            <h3>Step-by-Step: Create Component Generator Agent</h3>
+            <div class="checklist">
+                <li>1. Open Claude Code</li>
+                <li>2. Go to Agents section</li>
+                <li>3. Create new Agent</li>
+                <li>4. Name it: "Chakra UI Component Generator"</li>
+                <li>5. Define goal: "Generate Chakra UI components from descriptions"</li>
+                <li>6. Add Skills (we'll create these in afternoon)</li>
+                <li>7. Set context (theme file, design system)</li>
+                <li>8. Test with a simple component</li>
+            </div>
+            
+            <h3>Pros/Cons Analysis</h3>
+            <p><strong>Pros of Agents:</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>✅ Consistent output across team</li>
+                <li>✅ Saves time on repetitive tasks</li>
+                <li>✅ Team standardization</li>
+                <li>✅ Reduces prompt engineering</li>
+                <li>✅ Maintains design system consistency</li>
+            </ul>
+            
+            <p><strong>Cons of Agents:</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>❌ Setup overhead (initial time investment)</li>
+                <li>❌ Less flexibility than custom prompts</li>
+                <li>❌ Requires maintenance</li>
+                <li>❌ May need refinement over time</li>
+            </ul>
+            
+            <div class="pro-tip">
+                <strong>💡 Pro Tip:</strong> Start with one Agent for your most common task (component generation). Once it works well, create more Agents for other workflows.
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🌆 Afternoon Session: Skills Library Creation (3 hours)</h2>
+            
+            <h3>What Are Skills?</h3>
+            <p><strong>Definition:</strong> Reusable workflow patterns that Agents use to complete tasks.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Skills Resources</h4>
+                <a href="https://docs.anthropic.com/claude/docs/skills" target="_blank" class="resource-link">Claude Skills Documentation</a>
+                <a href="https://docs.anthropic.com/claude/docs/agents-skills" target="_blank" class="resource-link">Agents and Skills Guide</a>
+            </div>
+            
+            <h3>Essential Skills to Create</h3>
+            
+            <h4>Skill 1: Component Generation Skill</h4>
+            <p><strong>Purpose:</strong> Standard component creation workflow</p>
+            <div class="code-block">
+<code>Skill: Generate Chakra UI Component
+
+Input:
+- Component type (Button, Input, Card, etc.)
+- Variants needed
+- Props required
+- Theme tokens to use
+
+Process:
+1. Analyze component requirements
+2. Check theme for available tokens
+3. Generate Chakra UI code
+4. Add TypeScript types
+5. Ensure accessibility
+
+Output:
+- Complete React component
+- TypeScript types
+- Usage example</code>
+            </div>
+            
+            <h4>Skill 2: Theme Update Skill</h4>
+            <p><strong>Purpose:</strong> Update design system theme</p>
+            <div class="code-block">
+<code>Skill: Update Theme
+
+Input:
+- New token values (colors, spacing, etc.)
+- Token names to update
+
+Process:
+1. Read current theme file
+2. Update specified tokens
+3. Maintain theme structure
+4. Validate token values
+
+Output:
+- Updated theme file
+- Change log</code>
+            </div>
+            
+            <h4>Skill 3: Accessibility Check Skill</h4>
+            <p><strong>Purpose:</strong> Ensure WCAG compliance</p>
+            <div class="code-block">
+<code>Skill: Accessibility Audit
+
+Input:
+- Component code
+
+Process:
+1. Check ARIA labels
+2. Verify keyboard navigation
+3. Check color contrast
+4. Validate semantic HTML
+5. Test with screen reader patterns
+
+Output:
+- Accessibility audit report
+- Suggested fixes
+- Updated component code</code>
+            </div>
+            
+            <div class="resource-card">
+                <h4>📚 Accessibility Resources</h4>
+                <a href="https://www.w3.org/WAI/WCAG21/quickref/" target="_blank" class="resource-link">WCAG 2.1 Quick Reference</a>
+                <a href="https://www.w3.org/WAI/ARIA/apg/" target="_blank" class="resource-link">ARIA Authoring Practices</a>
+                <a href="https://chakra-ui.com/docs/getting-started#accessibility" target="_blank" class="resource-link">Chakra UI Accessibility</a>
+            </div>
+            
+            <h4>Skill 4: Design Token Extraction Skill</h4>
+            <p><strong>Purpose:</strong> Sync Figma → Code</p>
+            <div class="code-block">
+<code>Skill: Extract Design Tokens
+
+Input:
+- Figma design file or description
+- Token types needed (colors, spacing, typography)
+
+Process:
+1. Analyze Figma design
+2. Extract color values
+3. Extract spacing values
+4. Extract typography values
+5. Format as design tokens JSON
+
+Output:
+- Design tokens JSON
+- Token mapping document</code>
+            </div>
+            
+            <h3>Exercise: Build Skills Library</h3>
+            <div class="checklist">
+                <li>1. Create Skill 1: Component Generation</li>
+                <li>2. Test Skill 1 with Button component</li>
+                <li>3. Create Skill 2: Theme Update</li>
+                <li>4. Test Skill 2 with color update</li>
+                <li>5. Create Skill 3: Accessibility Check</li>
+                <li>6. Test Skill 3 on existing component</li>
+                <li>7. Create Skill 4: Token Extraction</li>
+                <li>8. Document all Skills with examples</li>
+            </div>
+            
+            <h3>Skills Documentation Template</h3>
+            <div class="code-block">
+<code># Skill Name
+
+## Purpose
+[What this skill does]
+
+## Input
+[What the skill needs]
+
+## Process
+[Steps the skill takes]
+
+## Output
+[What the skill produces]
+
+## Example
+[Real example of skill in use]
+
+## When to Use
+[When this skill is helpful]</code>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🧠 Expert Advice & Invaluable Takeaways</h2>
+            
+            <h3>Strategic Perspective: Agents as Team Multipliers</h3>
+            <p><strong>From Anthropic's Claude Agents Research:</strong> Agents aren't just automation—they're team multipliers. When you create an Agent for component generation, you're not replacing designers; you're enabling each designer to work at 3-5x speed while maintaining quality. This is especially powerful for B2B SaaS teams where consistency across features is critical.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Source: Claude Agents Documentation</h4>
+                <a href="https://docs.anthropic.com/claude/docs/agents" target="_blank" class="resource-link">Claude Agents Documentation</a>
+                <a href="https://docs.anthropic.com/claude/docs/agents-best-practices" target="_blank" class="resource-link">Agent Best Practices</a>
+            </div>
+            
+            <p><strong>Business Impact:</strong> If your team generates 50 components per month, and Agents save 30 minutes per component, that's 25 hours saved monthly. At $100/hour, that's $2,500/month in value—$30,000/year. The ROI on Agent setup (2-4 hours) is immediate.</p>
+            
+            <h3>Tactical Perspective: Skills as Reusable Patterns</h3>
+            <p><strong>From "Designing With AI" (Smashing Magazine):</strong> Skills are reusable workflow patterns. The key insight: don't create Skills for one-off tasks. Create Skills for patterns you'll repeat 10+ times. Component generation, theme updates, accessibility checks—these are perfect Skill candidates.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Source: Advanced AI Design Techniques</h4>
+                <a href="https://www.smashingmagazine.com/2025/08/designing-with-ai-practical-techniques-product-design/" target="_blank" class="resource-link">Smashing Magazine: Designing With AI</a>
+            </div>
+            
+            <p><strong>Immediate Application:</strong> When building your Skills library, prioritize by frequency. If you update themes weekly, that's a high-priority Skill. If you generate accessibility reports monthly, that's lower priority. Focus on Skills you'll use most often.</p>
+            
+            <h3>Engineering Perspective: Agent Chaining for Complex Workflows</h3>
+            <p><strong>From Dive Club's "AI Systems Designer":</strong> Complex workflows benefit from Agent chaining. Instead of one Agent doing everything, chain specialized Agents: Design Analyzer → Component Generator → Code Refiner → Documentation Generator. Each Agent does one thing well, and the chain handles the full workflow.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Source: Dive Club on AI Systems Design</h4>
+                <a href="https://www.dive.club/ideas/introducing-the-ai-systems-designer" target="_blank" class="resource-link">Dive Club: AI Systems Designer</a>
+            </div>
+            
+            <h3>Product Design Perspective: Agents for Design System Maintenance</h3>
+            <p><strong>From Chakra UI Best Practices:</strong> Design systems require constant maintenance—component updates, theme adjustments, documentation. Agents excel at these repetitive tasks. When you create an Agent for "Update component with new design tokens," you're automating design system maintenance.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Source: Design System Maintenance</h4>
+                <a href="https://www.nngroup.com/articles/design-systems-101/" target="_blank" class="resource-link">NN/g: Design Systems 101</a>
+            </div>
+            
+            <h3>B2B SaaS Perspective: Standardization Through Agents</h3>
+            <p><strong>Business Impact:</strong> For B2B SaaS, consistency across features reduces customer confusion and support burden. Agents ensure every component follows your design system automatically. This is especially valuable for teams with multiple designers—Agents enforce standards without constant oversight.</p>
+            
+            <h3>Debate Points: Agents vs. Manual Prompts</h3>
+            
+            <h4>Argument FOR Agents:</h4>
+            <p><strong>Pro:</strong> Agents provide consistency, reduce prompt engineering overhead, and enable team standardization. Once set up, they work autonomously.</p>
+            <p><strong>Source:</strong> <a href="https://docs.anthropic.com/claude/docs/agents" target="_blank">Claude Agents Documentation</a></p>
+            
+            <h4>Argument FOR Manual Prompts:</h4>
+            <p><strong>Pro:</strong> Manual prompts offer more flexibility, allow for creative exploration, and don't require setup overhead. Better for one-off tasks and experiments.</p>
+            
+            <p><strong>Resolution:</strong> Use Agents for repetitive tasks (80% of work). Use manual prompts for experiments and unique requirements (20% of work). The key is knowing when to use each.</p>
+            
+            <h3>Key Artifacts for Team Presentation</h3>
+            <div class="artifact-box">
+                <p><strong>Present to your team at end of Day 4:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>🤖 <strong>Working Agent Demo:</strong> Live demonstration of Agent generating components</li>
+                    <li>📚 <strong>Skills Library:</strong> 4+ Skills with documentation and examples</li>
+                    <li>📊 <strong>Efficiency Metrics:</strong> Time saved using Agents vs. manual prompts</li>
+                    <li>💡 <strong>Agent Architecture Diagram:</strong> Visual showing how Agents and Skills connect</li>
+                    <li>🎯 <strong>Use Case Examples:</strong> Real scenarios where Agents provide value</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>✅ Today's Artifacts</h2>
+            <div class="artifact-box">
+                <p><strong>Required Artifacts:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>🤖 Working Agent (Component Generator)</li>
+                    <li>📚 Skills library (4+ skills)</li>
+                    <li>📝 Agent documentation</li>
+                    <li>💻 Example components generated by Agent</li>
+                    <li>📊 Comparison: Agent vs. manual prompt results</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🎯 Checkpoint</h2>
+            <p>Before moving to Day 5, verify:</p>
+            <ul class="checklist">
+                <li>✅ Agent created and working</li>
+                <li>✅ At least 4 Skills created</li>
+                <li>✅ Agent tested with real components</li>
+                <li>✅ Skills documented</li>
+                <li>✅ Ready to sync design system tomorrow</li>
+            </ul>
+        </div>
+        
+        <div style="text-align: center; margin: 40px 0;">
+            <a href="day3.html" class="btn btn-secondary">← Day 3</a>
+            <a href="day5.html" class="btn">Continue to Day 5 →</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2: Chakra UI + MCP Integration | AI Rapid Prototyping</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="day1.html">← Day 1</a>
+            <a href="index.html">Curriculum</a>
+            <a href="day3.html">Day 3 →</a>
+        </div>
+        
+        <header>
+            <h1>Day 2: Chakra UI + MCP Deep Integration</h1>
+            <span class="time-badge">⏱️ 6 hours (Morning: 3h | Afternoon: 3h)</span>
+        </header>
+        
+        <div class="section">
+            <h2>🎯 Today's Goals</h2>
+            <ul class="checklist">
+                <li>✅ Deep understanding of MCP architecture</li>
+                <li>✅ Working MCP connection to Chakra UI</li>
+                <li>✅ Custom theme created with design tokens</li>
+                <li>✅ First components generated using MCP</li>
+                <li>✅ Theme documentation complete</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>🌅 Morning Session: MCP Architecture & Setup (3 hours)</h2>
+            
+            <h3>Deep Dive: MCP Architecture</h3>
+            <p><strong>What is MCP?</strong> Model Context Protocol is a standardized way for AI models to access external tools and data sources.</p>
+            
+            <div class="resource-card">
+                <h4>📚 MCP Resources</h4>
+                <a href="https://modelcontextprotocol.io" target="_blank" class="resource-link">MCP Official Site</a>
+                <a href="https://github.com/modelcontextprotocol/servers" target="_blank" class="resource-link">MCP Server Examples</a>
+                <a href="https://docs.anthropic.com/claude/docs/mcp" target="_blank" class="resource-link">Claude MCP Documentation</a>
+            </div>
+            
+            <h4>How MCP Works</h4>
+            <p><strong>Architecture Flow:</strong></p>
+            <div class="code-block">
+<code>AI Model (Claude) 
+    ↕
+MCP Server
+    ↕
+External Tool (Chakra UI Components)</code>
+            </div>
+            
+            <p><strong>Why MCP for Design Systems?</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>✅ Problem: AI doesn't know your design system by default</li>
+                <li>✅ Solution: MCP provides design system context to AI</li>
+                <li>✅ Benefit: Consistent, on-brand component generation</li>
+                <li>✅ Reduces prompt engineering overhead</li>
+            </ul>
+            
+            <div class="resource-card">
+                <h4>📚 Design System AI Integration</h4>
+                <a href="https://www.w3.org/community/design-tokens/" target="_blank" class="resource-link">W3C Design Tokens Community</a>
+                <a href="https://designtokens.org" target="_blank" class="resource-link">Design Tokens Community Group</a>
+            </div>
+            
+            <h3>Chakra UI MCP Server Setup</h3>
+            <p><strong>Option 1: Use Official MCP Server (if available)</strong></p>
+            <div class="code-block">
+<code>{
+  "mcpServers": {
+    "chakra-ui": {
+      "command": "npx",
+      "args": ["@chakra-ui/mcp-server"],
+      "env": {
+        "CHAKRA_THEME_PATH": "./theme.ts"
+      }
+    }
+  }
+}</code>
+            </div>
+            
+            <p><strong>Option 2: Create Custom MCP Server</strong></p>
+            <p>Since Chakra UI MCP server may not exist yet, you'll need to create a custom server or use Claude's built-in Chakra UI knowledge with proper context.</p>
+            
+            <div class="pro-tip">
+                <strong>💡 Pro Tip:</strong> Even without a formal MCP server, you can provide Chakra UI context to Claude by including your theme file and component examples in the conversation context.
+            </div>
+            
+            <h3>MCP Configuration Steps</h3>
+            <div class="checklist">
+                <li>1. Create MCP configuration file (or use Claude Code settings)</li>
+                <li>2. Point to your theme file location</li>
+                <li>3. Test MCP connection in Claude Code</li>
+                <li>4. Verify Claude can access Chakra UI knowledge</li>
+                <li>5. Document any custom setup required</li>
+            </div>
+            
+            <h3>Pros/Cons Analysis</h3>
+            <p><strong>Pros of MCP:</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>✅ Automatic theme awareness</li>
+                <li>✅ Consistent component generation</li>
+                <li>✅ Reduces manual prompt writing</li>
+                <li>✅ Team standardization</li>
+            </ul>
+            
+            <p><strong>Cons of MCP:</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>❌ Initial setup complexity</li>
+                <li>❌ Requires theme file maintenance</li>
+                <li>❌ Debugging can be challenging</li>
+                <li>❌ New technology (less documentation)</li>
+            </ul>
+            
+            <p><strong>Decision Framework:</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>✅ Use MCP when: Building design system, need consistency, team standardization</li>
+                <li>❌ Skip MCP when: One-off components, experimental work, simple projects</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>🌆 Afternoon Session: Custom Theme Creation (3 hours)</h2>
+            
+            <h3>Deep Dive: Design Token Strategy</h3>
+            
+            <div class="resource-card">
+                <h4>📚 Design Token Resources</h4>
+                <a href="https://www.w3.org/community/design-tokens/" target="_blank" class="resource-link">W3C Design Tokens Spec</a>
+                <a href="https://designtokens.org" target="_blank" class="resource-link">Design Tokens Community</a>
+                <a href="https://chakra-ui.com/docs/styled-system/theme" target="_blank" class="resource-link">Chakra UI Theme Docs</a>
+            </div>
+            
+            <h4>Token Architecture Decisions</h4>
+            
+            <p><strong>1. Color System: Semantic vs. Literal</strong></p>
+            <p><strong>Decision: Use Semantic Naming (Recommended)</strong></p>
+            
+            <div class="resource-card">
+                <h4>📚 Color System Research</h4>
+                <a href="https://material.io/design/color/the-color-system.html" target="_blank" class="resource-link">Material Design Color System</a>
+                <a href="https://www.w3.org/community/design-tokens/" target="_blank" class="resource-link">W3C Design Tokens</a>
+            </div>
+            
+            <p><strong>Semantic Naming:</strong> <code>primary.500</code>, <code>error.500</code>, <code>success.500</code></p>
+            <p><strong>Literal Naming:</strong> <code>blue.500</code>, <code>red.500</code>, <code>green.500</code></p>
+            
+            <p><strong>Why Semantic?</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>✅ Easier theme switching (dark mode, rebranding)</li>
+                <li>✅ More maintainable</li>
+                <li>✅ Better for AI generation</li>
+                <li>✅ Industry standard (Material Design, Ant Design)</li>
+            </ul>
+            
+            <p><strong>2. Spacing Scale: 4px vs. 8px Base</strong></p>
+            <p><strong>Decision: Use 4px Base (Recommended)</strong></p>
+            
+            <div class="resource-card">
+                <h4>📚 Spacing Resources</h4>
+                <a href="https://material.io/design/layout/spacing-methods.html" target="_blank" class="resource-link">Material Design Spacing</a>
+                <a href="https://tailwindcss.com/docs/customizing-spacing" target="_blank" class="resource-link">Tailwind Spacing Scale</a>
+            </div>
+            
+            <p><strong>4px Base:</strong> 4, 8, 12, 16, 20, 24, 32, 40, 48, 64...</p>
+            <p><strong>8px Base:</strong> 8, 16, 24, 32, 40, 48, 64...</p>
+            
+            <p><strong>Why 4px?</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>✅ More granular control</li>
+                <li>✅ Industry standard (Material Design, Tailwind)</li>
+                <li>✅ Better for fine-tuning</li>
+                <li>✅ More flexible for AI generation</li>
+            </ul>
+            
+            <p><strong>3. Typography Scale: Modular vs. Linear</strong></p>
+            <p><strong>Decision: Use Modular Scale (1.25 ratio)</strong></p>
+            
+            <div class="resource-card">
+                <h4>📚 Typography Resources</h4>
+                <a href="https://type-scale.com" target="_blank" class="resource-link">Type Scale Calculator</a>
+                <a href="https://chakra-ui.com/docs/styled-system/typography" target="_blank" class="resource-link">Chakra UI Typography</a>
+            </div>
+            
+            <p><strong>Modular Scale (1.25):</strong> 12, 14, 16, 20, 24, 32, 40...</p>
+            <p><strong>Linear Scale:</strong> 12, 14, 16, 18, 20, 22...</p>
+            
+            <p><strong>Why Modular?</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>✅ Better visual hierarchy</li>
+                <li>✅ More professional appearance</li>
+                <li>✅ Easier to maintain</li>
+                <li>✅ Industry standard</li>
+            </ul>
+            
+            <h3>Theme Implementation</h3>
+            <p>Create your custom theme file:</p>
+            <div class="code-block">
+<code>import { extendTheme } from '@chakra-ui/react';
+
+export const theme = extendTheme({
+  colors: {
+    brand: {
+      50: '#f0f9ff',  // Lightest
+      100: '#e0f2fe',
+      200: '#bae6fd',
+      300: '#7dd3fc',
+      400: '#38bdf8',
+      500: '#0066FF',  // Primary
+      600: '#0052CC',  // Hover
+      700: '#003D99',  // Active
+      800: '#002d73',
+      900: '#0c4a6e',  // Darkest
+    },
+    semantic: {
+      success: '#10b981',
+      error: '#ef4444',
+      warning: '#f59e0b',
+      info: '#3b82f6',
+    },
+  },
+  spacing: {
+    // 4px base scale
+    xs: '4px',
+    sm: '8px',
+    md: '16px',
+    lg: '24px',
+    xl: '32px',
+    '2xl': '48px',
+    '3xl': '64px',
+  },
+  fonts: {
+    body: 'Inter, system-ui, sans-serif',
+    heading: 'Inter, system-ui, sans-serif',
+    mono: 'Fira Code, monospace',
+  },
+  fontSizes: {
+    xs: '12px',
+    sm: '14px',
+    md: '16px',
+    lg: '20px',
+    xl: '24px',
+    '2xl': '32px',
+    '3xl': '40px',
+  },
+  components: {
+    Button: {
+      defaultProps: {
+        colorScheme: 'brand',
+      },
+      variants: {
+        primary: {
+          bg: 'brand.500',
+          color: 'white',
+          _hover: {
+            bg: 'brand.600',
+          },
+          _active: {
+            bg: 'brand.700',
+          },
+        },
+      },
+    },
+  },
+});</code>
+            </div>
+            
+            <div class="resource-card">
+                <h4>📚 Chakra UI Theme Resources</h4>
+                <a href="https://chakra-ui.com/docs/styled-system/theme" target="_blank" class="resource-link">Chakra UI Theme Documentation</a>
+                <a href="https://chakra-ui.com/docs/styled-system/customize-theme" target="_blank" class="resource-link">Customize Theme Guide</a>
+                <a href="https://chakra-ui.com/docs/styled-system/color-mode" target="_blank" class="resource-link">Color Mode (Dark/Light)</a>
+            </div>
+            
+            <h3>Exercise: Create Your Theme</h3>
+            <div class="checklist">
+                <li>1. Create <code>theme.ts</code> file in your project</li>
+                <li>2. Define your brand colors (use your actual brand colors)</li>
+                <li>3. Set up spacing scale (4px base)</li>
+                <li>4. Configure typography (modular scale)</li>
+                <li>5. Add component customizations</li>
+                <li>6. Test theme in a component</li>
+                <li>7. Document your theme decisions</li>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🧠 Expert Advice & Invaluable Takeaways</h2>
+            
+            <h3>Strategic Perspective: Design Systems as Competitive Advantage</h3>
+            <p><strong>From "Designing With AI" (Smashing Magazine):</strong> A well-structured design system with MCP integration becomes a competitive advantage. When AI can access your design tokens, components, and patterns, it generates consistent, on-brand code automatically. This consistency reduces QA time and improves customer trust.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Source: Advanced AI Design Techniques</h4>
+                <a href="https://www.smashingmagazine.com/2025/08/designing-with-ai-practical-techniques-product-design/" target="_blank" class="resource-link">Smashing Magazine: Designing With AI</a>
+            </div>
+            
+            <p><strong>Business Impact:</strong> For B2B SaaS, design consistency directly impacts customer trust and reduces support burden. When every component follows your design system, users learn your interface faster.</p>
+            
+            <h3>Tactical Perspective: Design Tokens from AI's Point of View</h3>
+            <p><strong>Why Semantic Tokens Matter:</strong> AI models understand semantic meaning better than literal values. When you use <code>brand.500</code> instead of <code>#0066FF</code>, AI can reason about color relationships, accessibility, and theming. This enables AI to suggest better design decisions.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Source: Design Tokens Specification</h4>
+                <a href="https://tr.designtokens.org/format/" target="_blank" class="resource-link">Design Tokens W3C Format</a>
+                <a href="https://www.w3.org/community/design-tokens/" target="_blank" class="resource-link">W3C Design Tokens Community Group</a>
+            </div>
+            
+            <p><strong>Immediate Application:</strong> When creating your theme, use semantic naming (e.g., <code>semantic.success</code>, <code>semantic.error</code>) rather than literal colors. This helps AI understand intent and generate more appropriate components.</p>
+            
+            <h3>Engineering Perspective: MCP as Infrastructure</h3>
+            <p><strong>From Dive Club's "Future of Design Tooling":</strong> MCP isn't just a feature—it's infrastructure. Just as you wouldn't build a product without a design system, you shouldn't build AI-enabled workflows without MCP. It's the bridge between your design system and AI models.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Source: Dive Club on Design Tooling</h4>
+                <a href="https://www.dive.club/ideas/the-future-of-design-tooling" target="_blank" class="resource-link">Dive Club: Future of Design Tooling</a>
+            </div>
+            
+            <p><strong>Critical Insight:</strong> If MCP setup is challenging, document your workaround but plan to implement it properly. The long-term benefits (team consistency, reduced prompt engineering) far outweigh the initial setup cost.</p>
+            
+            <h3>Product Design Perspective: Theme as Design Language</h3>
+            <p><strong>From Chakra UI Best Practices:</strong> Your theme is your design language. It encodes not just colors and spacing, but your brand's personality, accessibility standards, and interaction patterns. When AI understands this language through MCP, it speaks your brand fluently.</p>
+            
+            <div class="resource-card">
+                <h4>📚 Source: Chakra UI Documentation</h4>
+                <a href="https://chakra-ui.com/docs/getting-started" target="_blank" class="resource-link">Chakra UI Getting Started</a>
+                <a href="https://chakra-ui.com/docs/styled-system/theme" target="_blank" class="resource-link">Chakra UI Theme System</a>
+            </div>
+            
+            <h3>Debate Points: 4px vs 8px Base Scale</h3>
+            
+            <h4>Argument FOR 4px Base (Recommended):</h4>
+            <p><strong>Pro:</strong> 4px provides more granular control, especially for dense B2B interfaces. It allows for finer spacing adjustments and works better with modern UI patterns.</p>
+            <p><strong>Source:</strong> <a href="https://material.io/design/layout/spacing-methods.html" target="_blank">Material Design Spacing</a> and <a href="https://www.nngroup.com/articles/spacing-in-interface-design/" target="_blank">NN/g: Spacing in Interface Design</a></p>
+            
+            <h4>Argument FOR 8px Base:</h4>
+            <p><strong>Pro:</strong> 8px is more traditional, easier to calculate mentally, and works well for consumer-facing products with larger touch targets.</p>
+            <p><strong>Source:</strong> <a href="https://www.8pointgrid.com" target="_blank">8 Point Grid System</a></p>
+            
+            <p><strong>Resolution:</strong> For B2B SaaS with dense interfaces, 4px is recommended. For consumer products, 8px may be better. Document your decision and rationale.</p>
+            
+            <h3>Key Artifacts for Team Presentation</h3>
+            <div class="artifact-box">
+                <p><strong>Present to your team at end of Day 2:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>🎨 <strong>Theme Showcase:</strong> Visual comparison of your theme vs. default (before/after)</li>
+                    <li>📐 <strong>Design Token Decisions:</strong> Document why you chose 4px vs 8px, semantic vs literal, etc.</li>
+                    <li>🔗 <strong>MCP Integration Status:</strong> Working setup or documented workaround with timeline</li>
+                    <li>💡 <strong>AI-Generated Components:</strong> Show 2+ components using your theme (prove it works)</li>
+                    <li>📊 <strong>Expert Insights Summary:</strong> Key takeaways from today's expert sources</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>✅ Today's Artifacts</h2>
+            <div class="artifact-box">
+                <p><strong>Required Artifacts:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>📝 Working MCP configuration (or documented workaround)</li>
+                    <li>💻 Complete custom theme file</li>
+                    <li>📊 Theme documentation (decisions, rationale)</li>
+                    <li>🧩 At least 2 components using your theme</li>
+                    <li>📸 Screenshots of theme in action</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🎯 Checkpoint</h2>
+            <p>Before moving to Day 3, verify:</p>
+            <ul class="checklist">
+                <li>✅ MCP connection working (or alternative approach documented)</li>
+                <li>✅ Custom theme created and tested</li>
+                <li>✅ Theme decisions documented with rationale</li>
+                <li>✅ At least 2 components generated using your theme</li>
+                <li>✅ Ready to build component library tomorrow</li>
+            </ul>
+        </div>
+        
+        <div style="text-align: center; margin: 40px 0;">
+            <a href="day1.html" class="btn btn-secondary">← Day 1</a>
+            <a href="day3.html" class="btn">Continue to Day 3 →</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
